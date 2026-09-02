@@ -112,6 +112,18 @@ function kindColor(kind: EntityKind): string {
   }
 }
 
+function LiteralField({ entityUri, predicate, fieldLabel }: {
+  entityUri: string;
+  predicate: string;
+  fieldLabel: string;
+}) {
+  const { triples } = useTriples({ s: iri(entityUri), p: officeIri(predicate), limit: 1 });
+  if (triples.length === 0) return null;
+  const val = triples[0].o.t === "l" ? triples[0].o.v : null;
+  if (!val) return null;
+  return <LabelValue name={fieldLabel}>{val}</LabelValue>;
+}
+
 function SpendLimitField({ entityUri }: { entityUri: string }) {
   const { triples } = useTriples({ s: iri(entityUri), p: officeIri("spendLimit"), limit: 1 });
   if (triples.length === 0) return null;
@@ -164,6 +176,10 @@ export function EntityCard({ entityUri, onClick }: { entityUri: string; onClick?
         <>
           <RelatedList entityUri={entityUri} predicate="hasRole" direction="out" fieldLabel="Role" onClick={onClick} />
           <RelatedList entityUri={entityUri} predicate="memberOf" direction="out" fieldLabel="Team" onClick={onClick} />
+          <RelatedList entityUri={entityUri} predicate="reportsTo" direction="out" fieldLabel="Reports To" onClick={onClick} />
+          <LiteralField entityUri={entityUri} predicate="email" fieldLabel="Email" />
+          <LiteralField entityUri={entityUri} predicate="phoneNumber" fieldLabel="Phone" />
+          <LiteralField entityUri={entityUri} predicate="joinDate" fieldLabel="Joined" />
         </>
       )}
 

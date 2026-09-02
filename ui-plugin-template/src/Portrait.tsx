@@ -1,20 +1,18 @@
 import { useState } from "react";
 import { useTheme } from "@trustgraph/trustkit";
-import { OFFICE } from "./types";
-
-const PORTRAITS_BASE = "https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits";
-
-export function portraitUrl(entityUri: string): string | null {
-  if (!entityUri.startsWith(OFFICE)) return null;
-  const id = entityUri.slice(OFFICE.length);
-  if (!id.startsWith("Person_")) return null;
-  return `${PORTRAITS_BASE}/${id}.png`;
-}
+import { useTriples } from "@trustgraph/react-state";
+import { iri, thumbnailPred } from "./types";
+import type { Term } from "@trustgraph/client";
 
 export function Portrait({ entityUri, size = 32 }: { entityUri: string; size?: number }) {
   const { sz } = useTheme();
   const [failed, setFailed] = useState(false);
-  const url = portraitUrl(entityUri);
+  const { triples } = useTriples({ s: iri(entityUri), p: thumbnailPred, limit: 1 });
+
+  const obj = triples.length > 0 ? triples[0].o : null;
+  const url = obj
+    ? obj.t === "i" ? obj.i : obj.t === "l" ? obj.v : null
+    : null;
 
   if (!url || failed) return null;
 

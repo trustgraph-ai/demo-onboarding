@@ -3,11 +3,13 @@ import type { Term } from "@trustgraph/client";
 export const OFFICE = "http://example.org/ontology/office#";
 export const RDFS_LABEL = "http://www.w3.org/2000/01/rdf-schema#label";
 export const RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
+export const FOAF_THUMBNAIL = "http://xmlns.com/foaf/0.1/thumbnail";
 
 export const iri = (id: string): Term => ({ t: "i", i: id });
 export const officeIri = (name: string): Term => iri(`${OFFICE}${name}`);
 export const labelPred: Term = iri(RDFS_LABEL);
 export const rdfType: Term = iri(RDF_TYPE);
+export const thumbnailPred: Term = iri(FOAF_THUMBNAIL);
 
 export type EntityKind =
   | "Person" | "Role" | "Team" | "Department"

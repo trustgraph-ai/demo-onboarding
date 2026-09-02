@@ -54,7 +54,7 @@ export function CompactCard({ entityUri, onClick }: {
         background: theme.surface.base,
       }}
     >
-      {kind === "Person" && <Portrait entityUri={entityUri} size={28} />}
+      {kind === "Person" && <Portrait entityUri={entityUri} size={48} />}
       <Badge color={color} size="small">{kind}</Badge>
       <div style={{
         fontSize: sz(12),
