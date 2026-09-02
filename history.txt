@@ -1,0 +1,113 @@
+❯ We're buiolding a plugin for trustgraph.ai.  So, a UX task.  Claude helped get the data model together, worked out use-cases and  
+  user journeys.  To start with, there's a vision...  An Office Onboarding & “Who Knows What?” Bot — a plugin that indexes a        
+  company’s internal tools, team roles, project ownership, and communication channels. The quickstart query: “Who owns the payment  
+  gateway service, and who can approve my access?”   And example use-cases... Service ownership: “Who owns the payment gateway      
+  service?”                                                                                                                         
+  Access approval: “Who can approve my access to the data warehouse?”                                                               
+  Spend approval: “I’m raising an IT request with a £5k spend — who approves it?”                                                   
+  Role-based tooling: “I just joined as a data engineer — what tools do I need access to?”                                          
+  Escalation: “My request is stuck — who do I escalate to?”   report back when you have understood                                  
+
+● Let me explore the repo and the journeys file to understand the current state.
+
+  Read 1 file, listed 1 directory (ctrl+o to expand)                                                                                
+                                                                      
+● Explore(Explore repo structure)                                                                                                   
+  ⎿  Done (10 tool uses · 15.5k tokens · 17s)                                                                         
+  (ctrl+o to expand)                                                                                                                
+                                                                                                                                    
+● Got it. Here's my understanding:           
+                                                                                                                                    
+  Vision: An Office Onboarding & "Who Knows What?" bot plugin for TrustGraph. It leverages a knowledge graph (SPARQL-backed         
+  ontology) covering team roles, service ownership, approval chains, and communication channels.                                    
+                                                                                                                                    
+  Five core use-cases: service ownership lookup, access approval routing, spend threshold guidance, role-based tooling for new      
+  starters, and escalation paths.                                                                                                   
+                                                                                                                                    
+  Four user journeys are defined in journeys.txt:                                                                                   
+  1. Day-1 onboarding — auto-detected role triggers a checklist of required tools with one-click access requests                    
+  2. Service ownership — natural language query returns a service card (owner, team, manager, support channel) with action buttons  
+  3. Spend approval — amount + tool input renders the tiered approval chain with a submit action                                  
+  4. Escalation — surfaces the blocking step/person with nudge and contact options                                                  
+
+                                                                                                                                    
+  Current state: The repo is a minimal plugin template (TemplateExplorer.tsx) with 4 tabs (Hello, Graph, RAG, Explain) using        
+  TrustKit shared components. It builds as an IIFE bundle that plugs into the TrustGraph platform. The data model and journeys are  
+  designed — the UI to bring them to life hasn't been built yet.                                                                    
+                                                                                                                                    
+  Ready for direction on what to build first.                                                                                       
+   
+✻ Cooked for 52s                                                                                                                    
+                  
+❯ The existing template is just there for structure, those tabs are just generic.  FYI there's an ontology in onboarding.ttl.  Some 
+   suggested SPARQL queries in queries.txt, although don't treat that as the almanac, they're very complex cases.  The knowledge    
+  graph is available behind APIs, although the current loaded dataset is in onboarding-data.ttl if you want to see what it looks    
+  like.  FYI there are 2 graph APIs, the SPARQL API, but also there's a raw triple API which is faster for simple combination       
+  matches of (s,p,o).                                                                                                               
+                                                                                                                                    
+● Let me review those files to understand the data model and what we're working with.                                               
+
+● Now let me check how the TrustKit APIs work so I understand what's available for querying.
+                                                                                                                                    
+● Explore(Explore TrustKit API surface)                          
+  ⎿  Done (33 tool uses · 36.9k tokens · 1m 1s)                                                                                     
+  (ctrl+o to expand)                                                                                                                
+                                                                                                                                    
+● Understood. Here's the full picture I now have:                                                                                   
+                                                                                                                                    
+  Ontology (8 classes): Person, Role, Team, Department, Service, Process, ApprovalStep, Channel — connected by properties like      
+  :hasRole, :memberOf, :owns, :requiresAccess, :hasStep, :approvedBy, :managedBy, :belongsToDepartment, :associatedChannel, plus    
+  :spendLimit as a data property.                                                                                                   
+                                                                                                                                    
+  Sample data: ~40 people across 11 teams in 5 departments, 12 services (AWS, GitHub, Jira, Datadog, etc.) with Slack channels, 5   
+  approval processes with spend-tiered steps (from £250 helpdesk auto-verify up to £100k CFO approval), and role-to-service access
+  mappings.                                                                                                                         
+                                                                                                                                    
+  Available APIs:
+  - useTriples() — raw triple query hook, fast for simple (s,p,o) pattern matches
+  - sparqlQuery() — full SPARQL for complex joins (approval chains, multi-hop lookups)                                              
+  - useGraphRag() — natural language RAG queries against the graph                                                                  
+  - Rich component library: Card, Badge, Button, SearchInput, SplitPane, EmptyState, LoadingState, PageLayout, etc.                 
+                                                                                                                   
+  Current state: Template shell with placeholder tabs, no domain-specific UI yet.                                                   
+                                                                                                                                    
+  Ready to start building. What would you like to tackle first — one of the four journeys, or should I propose an approach?         
+
+❯ Why don't you propose an approach?                                                                                                
+
+
+● I'd suggest building a single dashboard view with a search/query bar at the top, and structured result cards below — rather than  
+  separate tabs per journey. The use-cases all start with a natural language question and return structured graph data, so one      
+  unified input that routes to the right query pattern (service lookup, role tooling, spend chain, escalation) keeps the UX simple  
+  and matches the "Who Knows What?" bot concept. We can use useTriples() for the simple lookups (service ownership, role tooling)
+  and SPARQL for the multi-hop ones (approval chains with spend thresholds).                                                        
+                                                                                                                                    
+  The main tradeoff: a unified search is more natural but means we need query classification logic up front. The alternative — one  
+  tab per journey — is easier to build but feels more like an admin tool than a conversational assistant.                           
+                                                                                                                                    
+  I'd build it in this order:
+  1. Shell: replace the template tabs with the new layout (search bar + results area)
+  2. Service ownership card: simplest query, proves the data path end-to-end                                                        
+  3. Role-based tooling card: similar pattern, different query              
+  4. Spend approval chain: the most complex rendering (tiered steps)                                                                
+  5. Escalation path: reuses patterns from 2 + 4                                                                                    
+                                                                                                                                    
+  Want me to go with this, or would you prefer the tabbed approach?                                                                 
+
+❯ You know there's a graph embeddings query available, btw?  That's useful for searching.   Plain text -> embeddings -> graph       
+  embeddings.                                                                                                                       
+                                                                                                                                    
+● Good point — that changes the approach nicely. Instead of building query classification logic, we can use useEmbeddings() to      
+  vectorize the user's plain text input, then useGraphEmbeddings() to find the nearest entities in the graph. That gives us a
+  natural entry point: user types anything, we find the relevant entities (a service, a role, a team), then follow the graph        
+  relationships from there with useTriples() to build the result cards.
+                                                                                                                                    
+  So the flow becomes: free text → embeddings → nearest graph entities → triple traversal → structured card.                        
+   
+  That eliminates the need to parse or classify the query — the vector search handles the intent mapping implicitly. We'd still use 
+  SPARQL for the spend approval chain (needs threshold filtering and ordering), but everything else can be triple lookups radiating
+  out from the matched entity.                                                                                                      
+                  
+  Same build order, just with embedding search as the universal entry point instead of per-journey routing. Want me to start?       
+
+

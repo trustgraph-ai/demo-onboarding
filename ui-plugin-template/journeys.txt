@@ -1,0 +1,87 @@
+Deploying the onboarding ontology through a Slack/Teams chat app or embedded
+portal plugin gives employees direct, conversational access to organizational
+metadata, access workflows, and approval chains.
+
+Primary Interaction Surfaces
+----------------------------
+
+Proactive App Home / DM: Welcome hub for new hires showing pre-calculated
+access requirements based on their assigned :Role.
+
+Conversational Query Bar: Natural language interface translating user prompts
+directly into SPARQL queries.
+
+Interactive Cards & Modals: Structured popups handling complex inputs like
+spend request amounts or approval overrides.
+
+Core User Journeys
+------------------
+
+Journey  Entry Point                                  Primary UI Component                                                              Key SPARQL Target
+-------  -------------------------------------------  --------------------------------------------------------------------------------  ----------------------------------------
+1        Automated HR Trigger / Direct Message         Interactive Onboarding Card listing required tools with "Request Access" buttons  Role-Based Tooling (:requiresAccess)
+2        Slash command /service [name] or prompt       Service Detail Card showing owner team, manager, and Slack channel link           Service Ownership (:owns, :managedBy)
+3        Chat prompt: "Who approves a £5k tool?"       Approval Chain Modal detailing threshold tiers and specific approver roles        Spend Approval (:spendLimit, :approvedBy)
+4        Button click on pending ticket notification   Escalation Routing Card identifying current blocker and designated manager        Escalation Path (:hasStep, :managedBy)
+
+Detailed Screen & Interaction Step-Throughs
+-------------------------------------------
+
+Journey 1: Role-Based Tooling (Day-1 Onboarding)
+
+  Step 1 (Trigger): User opens the bot app home or receives an automated
+  welcome message: "Welcome Alex! We see you joined as a Data Engineer."
+
+  Step 2 (Screen): An itemized checklist displays required platforms (AWS,
+  GitHub, Datadog) pulled via :requiresAccess.
+
+  Step 3 (Action): User clicks "Request All Default Tools". The bot
+  automatically triggers access requests and joins them to relevant :Channel
+  endpoints (e.g., #team-data-eng, #svc-aws).
+
+Journey 2: Service Ownership & Access
+
+  Step 1 (Input): User types: "Who owns the payment gateway?"
+
+  Step 2 (Screen): Bot returns a Service Card:
+    - Service: Payment Gateway (:Service)
+    - Owning Team: Core Payments (:Team)
+    - Team Manager: Sam Rodriguez (:Person)
+    - Support Channel: #team-core-payments (:Channel)
+
+  Step 3 (Action): Interactive buttons offer direct actions: [Join Channel],
+  [Request Access], or [Contact Manager].
+
+Journey 3: Spend Threshold Guidance
+
+  Step 1 (Input): User asks: "I need £5,000 for a new Figma license, who
+  signs off?"
+
+  Step 2 (Screen): Bot opens a Spend Calculator Modal auto-filled with
+  £5,000 and Figma.
+
+  Step 3 (Output): The bot queries :spendLimit and renders the exact
+  approval path:
+    - Step 1: Helpdesk Auto Verification (£250 limit) — Passed
+    - Step 2: Finance Sign-off (£2,500 limit) — Requires Procurement
+      Specialist approval
+    - Step 3: Executive Clearance (£25,000 limit) — Final Approver:
+      Financial Accountant
+
+  Step 4 (Action): User clicks "Submit to Approvers" to route the request
+  directly to the appropriate role.
+
+Journey 4: Request Escalation
+
+  Step 1 (Trigger): User clicks "Check Status" on an open ticket or types
+  "My access request is stuck."
+
+  Step 2 (Screen): Bot inspects the current :ApprovalStep and identifies
+  the blocking role.
+
+  Step 3 (Output): Bot presents an Escalation Card: "Your request is
+  sitting with AppSec Specialist (Security Team). If urgent, reach out in
+  #sec-ops or contact Team Manager Taylor Smith."
+
+  Step 4 (Action): User clicks "Nudge Approver" to send a pre-formatted
+  notification directly to the manager.

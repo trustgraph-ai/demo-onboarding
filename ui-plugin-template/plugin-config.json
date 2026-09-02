@@ -1,0 +1,13 @@
+{
+  "demo": [
+    {
+      "id": "onboarding",
+      "title": "Onboarding",
+      "icon": "🏢",
+      "paletteKey": "cyan",
+      "description": "Office onboarding and \"Who Knows What?\" explorer.",
+      "url": "/plugins/onboarding.iife.js",
+      "globalName": "TemplatePlugin"
+    }
+  ]
+}

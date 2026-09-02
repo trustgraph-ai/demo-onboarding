@@ -1,0 +1,114 @@
+@prefix : <http://example.org/ontology/office#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/ontology/office> a owl:Ontology ;
+    rdfs:label "Office Onboarding and Service Ownership Ontology" ;
+    rdfs:comment "An ontology defining organizational entities, service ownership, access management, communication channels, and approval workflows for knowledge extraction." .
+
+#################################################################
+#    Classes
+#################################################################
+
+:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:comment "An individual employee, contractor, or team member within the organization." .
+
+:Role a owl:Class ;
+    rdfs:label "Role" ;
+    rdfs:comment "A designated job function, title, or position held by a Person (e.g., DevOps Engineer, Engineering Manager, Procurement Officer)." .
+
+:Team a owl:Class ;
+    rdfs:label "Team" ;
+    rdfs:comment "A functional group of individuals collaborating on specific operational goals or organizational areas." .
+
+:Department a owl:Class ;
+    rdfs:label "Department" ;
+    rdfs:comment "A top-level organizational unit (e.g., Engineering, Human Resources, Finance) containing multiple teams." .
+
+:Service a owl:Class ;
+    rdfs:label "Service" ;
+    rdfs:comment "An internal tool, software platform, infrastructure system, or SaaS application used by the organization (e.g., GitHub, Jira, AWS, Datadog)." .
+
+:Process a owl:Class ;
+    rdfs:label "Process" ;
+    rdfs:comment "A structured sequence of administrative steps or workflows, such as IT onboarding, software access requests, or hardware procurement." .
+
+:ApprovalStep a owl:Class ;
+    rdfs:label "Approval Step" ;
+    rdfs:comment "A specific phase within a Process where sign-off is required, often bound by financial spend thresholds or role-based governance." .
+
+:Channel a owl:Class ;
+    rdfs:label "Channel" ;
+    rdfs:comment "A communication medium, such as a Slack channel, Microsoft Teams group, or email distribution list." .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+:hasRole a owl:ObjectProperty ;
+    rdfs:domain :Person ;
+    rdfs:range :Role ;
+    rdfs:label "has role" ;
+    rdfs:comment "Links a Person to the official Role or job title they currently hold within the organization." .
+
+:memberOf a owl:ObjectProperty ;
+    rdfs:domain :Person ;
+    rdfs:range :Team ;
+    rdfs:label "member of" ;
+    rdfs:comment "Associates a Person with the Team they belong to." .
+
+:owns a owl:ObjectProperty ;
+    rdfs:domain :Team ;
+    rdfs:range :Service ;
+    rdfs:label "owns" ;
+    rdfs:comment "Indicates that a specific Team is responsible for maintaining, supporting, and administering a Service." .
+
+:requiresAccess a owl:ObjectProperty ;
+    rdfs:domain :Role ;
+    rdfs:range :Service ;
+    rdfs:label "requires access to" ;
+    rdfs:comment "Specifies that individuals holding a particular Role require default or policy-driven access to a Service to perform their duties." .
+
+:hasStep a owl:ObjectProperty ;
+    rdfs:domain :Process ;
+    rdfs:range :ApprovalStep ;
+    rdfs:label "has step" ;
+    rdfs:comment "Connects an overall Process workflow to an individual ApprovalStep contained within its execution sequence." .
+
+:approvedBy a owl:ObjectProperty ;
+    rdfs:domain :ApprovalStep ;
+    rdfs:range :Role ;
+    rdfs:label "approved by" ;
+    rdfs:comment "Identifies the designated Role authorized to sign off on or evaluate a given ApprovalStep." .
+
+:managedBy a owl:ObjectProperty ;
+    rdfs:domain :Team ;
+    rdfs:range :Person ;
+    rdfs:label "managed by" ;
+    rdfs:comment "Designates the Person responsible for leading, managing, or overseeing a Team." .
+
+:belongsToDepartment a owl:ObjectProperty ;
+    rdfs:domain :Team ;
+    rdfs:range :Department ;
+    rdfs:label "belongs to department" ;
+    rdfs:comment "Links a Team to its parent Department within the corporate hierarchy." .
+
+:associatedChannel a owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (:Team :Service :Process) ] ;
+    rdfs:range :Channel ;
+    rdfs:label "associated channel" ;
+    rdfs:comment "Links a Team, Service, or Process to its primary communication Channel (e.g., notification channel or support room)." .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+:spendLimit a owl:DatatypeProperty ;
+    rdfs:domain :ApprovalStep ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "spend limit" ;
+    rdfs:comment "The maximum financial value (numeric monetary threshold) that can be authorized at this ApprovalStep before requiring higher escalation." .
+

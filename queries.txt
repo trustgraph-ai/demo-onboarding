@@ -1,0 +1,147 @@
+## 1. Service Ownership
+
+*"Who owns the payment gateway service?"*
+
+```sparql
+PREFIX : <http://example.org/ontology/office#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?serviceName ?teamName ?managerName ?teamChannel
+WHERE {
+  ?service a :Service ;
+           rdfs:label ?serviceName .
+  FILTER(REGEX(?serviceName, "Payment Gateway", "i"))
+
+  ?team a :Team ;
+        rdfs:label ?teamName ;
+        :owns ?service .
+
+  OPTIONAL {
+    ?team :managedBy ?manager ;
+          :associatedChannel ?channel .
+    ?manager rdfs:label ?managerName .
+    ?channel rdfs:label ?teamChannel .
+  }
+}
+```
+
+## 2. Access Approval
+
+*"Who can approve my access to the data warehouse?"*
+
+```sparql
+PREFIX : <http://example.org/ontology/office#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?processName ?stepName ?approverRole ?approverPerson
+WHERE {
+  ?process a :Process ;
+           rdfs:label ?processName ;
+           :hasStep ?step .
+
+  FILTER(REGEX(?processName, "Access", "i"))
+
+  ?step a :ApprovalStep ;
+        rdfs:label ?stepName ;
+        :approvedBy ?role .
+
+  ?role rdfs:label ?approverRole .
+
+  OPTIONAL {
+    ?person a :Person ;
+            :hasRole ?role ;
+            rdfs:label ?approverPerson .
+  }
+}
+```
+
+## 3. Spend Approval
+
+*"I'm raising an IT request with a £5k spend — who approves it?"*
+
+```sparql
+PREFIX : <http://example.org/ontology/office#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?processName ?stepName ?spendLimit ?approverRole ?approverPerson
+WHERE {
+  ?process a :Process ;
+           rdfs:label ?processName ;
+           :hasStep ?step .
+
+  ?step a :ApprovalStep ;
+        rdfs:label ?stepName ;
+        :spendLimit ?spendLimit ;
+        :approvedBy ?role .
+
+  # Finds approval stages with a threshold capable of authorizing £5,000
+  FILTER(?spendLimit >= 5000.00)
+
+  ?role rdfs:label ?approverRole .
+
+  OPTIONAL {
+    ?person a :Person ;
+            :hasRole ?role ;
+            rdfs:label ?approverPerson .
+  }
+}
+ORDER BY ASC(?spendLimit)
+```
+
+## 4. Role-Based Tooling
+
+*"I just joined as a data engineer — what tools do I need access to?"*
+
+```sparql
+PREFIX : <http://example.org/ontology/office#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?roleName ?requiredService ?serviceChannel
+WHERE {
+  ?role a :Role ;
+        rdfs:label ?roleName ;
+        :requiresAccess ?service .
+
+  FILTER(REGEX(?roleName, "Data Engineer", "i"))
+
+  ?service a :Service ;
+           rdfs:label ?requiredService .
+
+  OPTIONAL {
+    ?service :associatedChannel ?channel .
+    ?channel rdfs:label ?serviceChannel .
+  }
+}
+```
+
+## 5. Escalation Path
+
+*"My request is stuck — who do I escalate to?"*
+
+```sparql
+PREFIX : <http://example.org/ontology/office#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?serviceName ?owningTeam ?managerName ?managerRole ?escalationChannel
+WHERE {
+  ?service a :Service ;
+           rdfs:label ?serviceName .
+  FILTER(REGEX(?serviceName, "AWS Infrastructure", "i"))
+
+  ?team a :Team ;
+        rdfs:label ?owningTeam ;
+        :owns ?service ;
+        :managedBy ?manager .
+
+  ?manager rdfs:label ?managerName ;
+           :hasRole ?role .
+
+  ?role rdfs:label ?managerRole .
+
+  OPTIONAL {
+    ?team :associatedChannel ?channel .
+    ?channel rdfs:label ?escalationChannel .
+  }
+}
+```

@@ -1,0 +1,2367 @@
+@prefix : <http://example.org/ontology/office#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/ontology/office> a owl:Ontology ;
+    rdfs:label "Office Onboarding and Service Ownership Ontology" ;
+    rdfs:comment "Defines organizational structure, service ownership, access rules, and approval workflows." .
+
+:Person_AlexHernandez a :Person ;
+    rdfs:label "Alex Hernandez" ;
+    :email "alex.hernandez@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalPm ;
+    :joinDate "2022-07-15"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "07700 900181"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Alex Hernandez working as Technical PM on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/AlexHernandez.png> .
+
+:Person_AlexJackson a :Person ;
+    rdfs:label "Alex Jackson" ;
+    :email "alex.jackson@example.com"^^xsd:string ;
+    :hasRole :Role_SiteReliabilityEngineer ;
+    :joinDate "2022-03-14"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "020 7946 0878"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Alex Jackson working as Site Reliability Engineer on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/AlexJackson.png> .
+
+:Person_AlexLopez a :Person ;
+    rdfs:label "Alex Lopez" ;
+    :email "alex.lopez@example.com"^^xsd:string ;
+    :hasRole :Role_SiteReliabilityEngineer ;
+    :joinDate "2024-01-16"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "020 7946 0668"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Alex Lopez working as Site Reliability Engineer on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/AlexLopez.png> .
+
+:Person_AlexWilliams a :Person ;
+    rdfs:label "Alex Williams" ;
+    :email "alex.williams@example.com"^^xsd:string ;
+    :hasRole :Role_AppsecSpecialist ;
+    :joinDate "2023-01-03"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "01632 960166"^^xsd:string ;
+    :reportsTo :Person_CaseyAnderson ;
+    rdfs:comment "Employee Alex Williams working as AppSec Specialist on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/AlexWilliams.png> .
+
+:Person_AveryJohnson a :Person ;
+    rdfs:label "Avery Johnson" ;
+    :email "avery.johnson@example.com"^^xsd:string ;
+    :hasRole :Role_OnboardingLead ;
+    :joinDate "2025-01-24"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "07700 900928"^^xsd:string ;
+    :reportsTo :Person_JamieThomas ;
+    rdfs:comment "Employee Avery Johnson working as Onboarding Lead on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/AveryJohnson.png> .
+
+:Person_AveryJones a :Person ;
+    rdfs:label "Avery Jones" ;
+    :email "avery.jones@example.com"^^xsd:string ;
+    :hasRole :Role_FrontendDeveloper ;
+    :joinDate "2023-07-10"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "01632 960089"^^xsd:string ;
+    :reportsTo :Person_HaydenMoore ;
+    rdfs:comment "Employee Avery Jones working as Frontend Developer on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/AveryJones.png> .
+
+:Person_AveryThomas a :Person ;
+    rdfs:label "Avery Thomas" ;
+    :email "avery.thomas@example.com"^^xsd:string ;
+    :hasRole :Role_SiteReliabilityEngineer ;
+    :joinDate "2024-08-24"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "07700 900002"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Avery Thomas working as Site Reliability Engineer on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/AveryThomas.png> .
+
+:Person_CameronJohnson a :Person ;
+    rdfs:label "Cameron Johnson" ;
+    :email "cameron.johnson@example.com"^^xsd:string ;
+    :hasRole :Role_ProcurementSpecialist ;
+    :joinDate "2024-05-09"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "020 7946 0946"^^xsd:string ;
+    :reportsTo :Person_HarperMiller ;
+    rdfs:comment "Employee Cameron Johnson working as Procurement Specialist on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CameronJohnson.png> .
+
+:Person_CameronMartin a :Person ;
+    rdfs:label "Cameron Martin" ;
+    :email "cameron.martin@example.com"^^xsd:string ;
+    :hasRole :Role_StaffAccountant ;
+    :joinDate "2025-07-26"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "01632 960553"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Cameron Martin working as Staff Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CameronMartin.png> .
+
+:Person_CameronMiller a :Person ;
+    rdfs:label "Cameron Miller" ;
+    :email "cameron.miller@example.com"^^xsd:string ;
+    :hasRole :Role_SourcingSpecialist ;
+    :joinDate "2025-02-28"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "07700 900789"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Cameron Miller working as Sourcing Specialist on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CameronMiller.png> .
+
+:Person_CaseyHernandez a :Person ;
+    rdfs:label "Casey Hernandez" ;
+    :email "casey.hernandez@example.com"^^xsd:string ;
+    :hasRole :Role_FinancialAccountant ;
+    :joinDate "2025-11-21"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "07700 900105"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Casey Hernandez working as Financial Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CaseyHernandez.png> .
+
+:Person_CaseyJackson a :Person ;
+    rdfs:label "Casey Jackson" ;
+    :email "casey.jackson@example.com"^^xsd:string ;
+    :hasRole :Role_SiteReliabilityEngineer ;
+    :joinDate "2022-11-04"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "020 7946 0964"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Casey Jackson working as Site Reliability Engineer on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CaseyJackson.png> .
+
+:Person_CaseyLopez a :Person ;
+    rdfs:label "Casey Lopez" ;
+    :email "casey.lopez@example.com"^^xsd:string ;
+    :hasRole :Role_StaffAccountant ;
+    :joinDate "2022-01-03"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "020 7946 0943"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Casey Lopez working as Staff Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CaseyLopez.png> .
+
+:Person_CaseyMiller a :Person ;
+    rdfs:label "Casey Miller" ;
+    :email "casey.miller@example.com"^^xsd:string ;
+    :hasRole :Role_DevopsEngineer ;
+    :joinDate "2024-02-24"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "07700 900495"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Casey Miller working as DevOps Engineer on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CaseyMiller.png> .
+
+:Person_CaseyTaylor a :Person ;
+    rdfs:label "Casey Taylor" ;
+    :email "casey.taylor@example.com"^^xsd:string ;
+    :hasRole :Role_OfficeAdmin ;
+    :joinDate "2022-08-12"^^xsd:date ;
+    :memberOf :Team_WorkplaceOperations ;
+    :phoneNumber "01632 960127"^^xsd:string ;
+    :reportsTo :Person_HarperDavis ;
+    rdfs:comment "Employee Casey Taylor working as Office Admin on the Workplace Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CaseyTaylor.png> .
+
+:Person_CaseyWilliams a :Person ;
+    rdfs:label "Casey Williams" ;
+    :email "casey.williams@example.com"^^xsd:string ;
+    :hasRole :Role_SecurityEngineer ;
+    :joinDate "2024-08-10"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "01632 960291"^^xsd:string ;
+    :reportsTo :Person_CaseyAnderson ;
+    rdfs:comment "Employee Casey Williams working as Security Engineer on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CaseyWilliams.png> .
+
+:Person_CaseyWilson a :Person ;
+    rdfs:label "Casey Wilson" ;
+    :email "casey.wilson@example.com"^^xsd:string ;
+    :hasRole :Role_ItSupportSpecialist ;
+    :joinDate "2023-10-14"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "07700 900939"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Casey Wilson working as IT Support Specialist on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CaseyWilson.png> .
+
+:Person_ChrisGonzalez a :Person ;
+    rdfs:label "Chris Gonzalez" ;
+    :email "chris.gonzalez@example.com"^^xsd:string ;
+    :hasRole :Role_DevopsEngineer ;
+    :joinDate "2025-02-06"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "020 7946 0573"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Chris Gonzalez working as DevOps Engineer on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ChrisGonzalez.png> .
+
+:Person_ChrisJones a :Person ;
+    rdfs:label "Chris Jones" ;
+    :email "chris.jones@example.com"^^xsd:string ;
+    :hasRole :Role_CloudArchitect ;
+    :joinDate "2024-05-08"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "07700 900832"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Chris Jones working as Cloud Architect on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ChrisJones.png> .
+
+:Person_ChrisMartinez a :Person ;
+    rdfs:label "Chris Martinez" ;
+    :email "chris.martinez@example.com"^^xsd:string ;
+    :hasRole :Role_UxDesigner ;
+    :joinDate "2025-07-29"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "07700 900054"^^xsd:string ;
+    :reportsTo :Person_CaseyGonzalez ;
+    rdfs:comment "Employee Chris Martinez working as UX Designer on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ChrisMartinez.png> .
+
+:Person_ChrisMiller a :Person ;
+    rdfs:label "Chris Miller" ;
+    :email "chris.miller@example.com"^^xsd:string ;
+    :hasRole :Role_OnboardingLead ;
+    :joinDate "2023-05-18"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "01632 960506"^^xsd:string ;
+    :reportsTo :Person_JamieThomas ;
+    rdfs:comment "Employee Chris Miller working as Onboarding Lead on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ChrisMiller.png> .
+
+:Person_ChrisThomas a :Person ;
+    rdfs:label "Chris Thomas" ;
+    :email "chris.thomas@example.com"^^xsd:string ;
+    :hasRole :Role_UxDesigner ;
+    :joinDate "2022-05-08"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "020 7946 0663"^^xsd:string ;
+    :reportsTo :Person_CaseyGonzalez ;
+    rdfs:comment "Employee Chris Thomas working as UX Designer on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ChrisThomas.png> .
+
+:Person_ChrisWilson a :Person ;
+    rdfs:label "Chris Wilson" ;
+    :email "chris.wilson@example.com"^^xsd:string ;
+    :hasRole :Role_ProductManager ;
+    :joinDate "2024-11-01"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "07700 900604"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Chris Wilson working as Product Manager on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ChrisWilson.png> .
+
+:Person_DakotaBrown a :Person ;
+    rdfs:label "Dakota Brown" ;
+    :email "dakota.brown@example.com"^^xsd:string ;
+    :hasRole :Role_FrontendDeveloper ;
+    :joinDate "2025-10-10"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "07700 900753"^^xsd:string ;
+    :reportsTo :Person_HaydenMoore ;
+    rdfs:comment "Employee Dakota Brown working as Frontend Developer on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/DakotaBrown.png> .
+
+:Person_DakotaGonzalez a :Person ;
+    rdfs:label "Dakota Gonzalez" ;
+    :email "dakota.gonzalez@example.com"^^xsd:string ;
+    :hasRole :Role_FacilitiesManager ;
+    :joinDate "2022-08-05"^^xsd:date ;
+    :memberOf :Team_WorkplaceOperations ;
+    :phoneNumber "020 7946 0271"^^xsd:string ;
+    :reportsTo :Person_HarperDavis ;
+    rdfs:comment "Employee Dakota Gonzalez working as Facilities Manager on the Workplace Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/DakotaGonzalez.png> .
+
+:Person_DakotaJackson a :Person ;
+    rdfs:label "Dakota Jackson" ;
+    :email "dakota.jackson@example.com"^^xsd:string ;
+    :hasRole :Role_FrontendDeveloper ;
+    :joinDate "2025-03-16"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "07700 900624"^^xsd:string ;
+    :reportsTo :Person_HaydenMoore ;
+    rdfs:comment "Employee Dakota Jackson working as Frontend Developer on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/DakotaJackson.png> .
+
+:Person_DakotaThomas a :Person ;
+    rdfs:label "Dakota Thomas" ;
+    :email "dakota.thomas@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalRecruiter ;
+    :joinDate "2024-07-24"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "01632 960187"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Dakota Thomas working as Technical Recruiter on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/DakotaThomas.png> .
+
+:Person_HarperJohnson a :Person ;
+    rdfs:label "Harper Johnson" ;
+    :email "harper.johnson@example.com"^^xsd:string ;
+    :hasRole :Role_SystemAdministrator ;
+    :joinDate "2023-10-08"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "020 7946 0377"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Harper Johnson working as System Administrator on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HarperJohnson.png> .
+
+:Person_HarperSmith a :Person ;
+    rdfs:label "Harper Smith" ;
+    :email "harper.smith@example.com"^^xsd:string ;
+    :hasRole :Role_FinancialAccountant ;
+    :joinDate "2023-09-22"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "01632 960407"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Harper Smith working as Financial Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HarperSmith.png> .
+
+:Person_HarperTaylor a :Person ;
+    rdfs:label "Harper Taylor" ;
+    :email "harper.taylor@example.com"^^xsd:string ;
+    :hasRole :Role_FinancialAccountant ;
+    :joinDate "2023-11-18"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "020 7946 0096"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Harper Taylor working as Financial Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HarperTaylor.png> .
+
+:Person_HarperWilliams a :Person ;
+    rdfs:label "Harper Williams" ;
+    :email "harper.williams@example.com"^^xsd:string ;
+    :hasRole :Role_CloudArchitect ;
+    :joinDate "2023-04-05"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "01632 960335"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Harper Williams working as Cloud Architect on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HarperWilliams.png> .
+
+:Person_HaydenBrown a :Person ;
+    rdfs:label "Hayden Brown" ;
+    :email "hayden.brown@example.com"^^xsd:string ;
+    :hasRole :Role_UiLead ;
+    :joinDate "2024-10-25"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "07700 900559"^^xsd:string ;
+    :reportsTo :Person_HaydenMoore ;
+    rdfs:comment "Employee Hayden Brown working as UI Lead on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HaydenBrown.png> .
+
+:Person_HaydenJackson a :Person ;
+    rdfs:label "Hayden Jackson" ;
+    :email "hayden.jackson@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalPm ;
+    :joinDate "2025-12-06"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "07700 900220"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Hayden Jackson working as Technical PM on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HaydenJackson.png> .
+
+:Person_HaydenJones a :Person ;
+    rdfs:label "Hayden Jones" ;
+    :email "hayden.jones@example.com"^^xsd:string ;
+    :hasRole :Role_FrontendDeveloper ;
+    :joinDate "2023-10-18"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "07700 900840"^^xsd:string ;
+    :reportsTo :Person_HaydenMoore ;
+    rdfs:comment "Employee Hayden Jones working as Frontend Developer on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HaydenJones.png> .
+
+:Person_HaydenMiller a :Person ;
+    rdfs:label "Hayden Miller" ;
+    :email "hayden.miller@example.com"^^xsd:string ;
+    :hasRole :Role_AppsecSpecialist ;
+    :joinDate "2023-11-02"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "01632 960603"^^xsd:string ;
+    :reportsTo :Person_CaseyAnderson ;
+    rdfs:comment "Employee Hayden Miller working as AppSec Specialist on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HaydenMiller.png> .
+
+:Person_HaydenSmith a :Person ;
+    rdfs:label "Hayden Smith" ;
+    :email "hayden.smith@example.com"^^xsd:string ;
+    :hasRole :Role_UxDesigner ;
+    :joinDate "2022-09-25"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "020 7946 0615"^^xsd:string ;
+    :reportsTo :Person_CaseyGonzalez ;
+    rdfs:comment "Employee Hayden Smith working as UX Designer on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HaydenSmith.png> .
+
+:Person_HaydenWilliams a :Person ;
+    rdfs:label "Hayden Williams" ;
+    :email "hayden.williams@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalPm ;
+    :joinDate "2023-04-20"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "07700 900098"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Hayden Williams working as Technical PM on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HaydenWilliams.png> .
+
+:Person_HaydenWilson a :Person ;
+    rdfs:label "Hayden Wilson" ;
+    :email "hayden.wilson@example.com"^^xsd:string ;
+    :hasRole :Role_OfficeAdmin ;
+    :joinDate "2024-08-12"^^xsd:date ;
+    :memberOf :Team_WorkplaceOperations ;
+    :phoneNumber "07700 900860"^^xsd:string ;
+    :reportsTo :Person_HarperDavis ;
+    rdfs:comment "Employee Hayden Wilson working as Office Admin on the Workplace Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HaydenWilson.png> .
+
+:Person_JamieLopez a :Person ;
+    rdfs:label "Jamie Lopez" ;
+    :email "jamie.lopez@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalPm ;
+    :joinDate "2024-02-02"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "020 7946 0729"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Jamie Lopez working as Technical PM on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/JamieLopez.png> .
+
+:Person_JamieSmith a :Person ;
+    rdfs:label "Jamie Smith" ;
+    :email "jamie.smith@example.com"^^xsd:string ;
+    :hasRole :Role_VendorManager ;
+    :joinDate "2023-05-03"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "07700 900720"^^xsd:string ;
+    :reportsTo :Person_HarperMiller ;
+    rdfs:comment "Employee Jamie Smith working as Vendor Manager on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/JamieSmith.png> .
+
+:Person_JamieWilliams a :Person ;
+    rdfs:label "Jamie Williams" ;
+    :email "jamie.williams@example.com"^^xsd:string ;
+    :hasRole :Role_DevopsEngineer ;
+    :joinDate "2025-09-04"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "020 7946 0027"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Jamie Williams working as DevOps Engineer on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/JamieWilliams.png> .
+
+:Person_JordanGarcia a :Person ;
+    rdfs:label "Jordan Garcia" ;
+    :email "jordan.garcia@example.com"^^xsd:string ;
+    :hasRole :Role_ProductManager ;
+    :joinDate "2024-11-30"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "07700 900293"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Jordan Garcia working as Product Manager on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/JordanGarcia.png> .
+
+:Person_JordanJones a :Person ;
+    rdfs:label "Jordan Jones" ;
+    :email "jordan.jones@example.com"^^xsd:string ;
+    :hasRole :Role_HrPartner ;
+    :joinDate "2024-04-19"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "01632 960599"^^xsd:string ;
+    :reportsTo :Person_JamieThomas ;
+    rdfs:comment "Employee Jordan Jones working as HR Partner on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/JordanJones.png> .
+
+:Person_JordanRodriguez a :Person ;
+    rdfs:label "Jordan Rodriguez" ;
+    :email "jordan.rodriguez@example.com"^^xsd:string ;
+    :hasRole :Role_UiLead ;
+    :joinDate "2022-06-09"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "07700 900535"^^xsd:string ;
+    :reportsTo :Person_HaydenMoore ;
+    rdfs:comment "Employee Jordan Rodriguez working as UI Lead on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/JordanRodriguez.png> .
+
+:Person_JordanWilliams a :Person ;
+    rdfs:label "Jordan Williams" ;
+    :email "jordan.williams@example.com"^^xsd:string ;
+    :hasRole :Role_OfficeAdmin ;
+    :joinDate "2022-10-06"^^xsd:date ;
+    :memberOf :Team_WorkplaceOperations ;
+    :phoneNumber "020 7946 0674"^^xsd:string ;
+    :reportsTo :Person_HarperDavis ;
+    rdfs:comment "Employee Jordan Williams working as Office Admin on the Workplace Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/JordanWilliams.png> .
+
+:Person_JordanWilson a :Person ;
+    rdfs:label "Jordan Wilson" ;
+    :email "jordan.wilson@example.com"^^xsd:string ;
+    :hasRole :Role_AppsecSpecialist ;
+    :joinDate "2024-04-01"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "020 7946 0019"^^xsd:string ;
+    :reportsTo :Person_CaseyAnderson ;
+    rdfs:comment "Employee Jordan Wilson working as AppSec Specialist on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/JordanWilson.png> .
+
+:Person_KendallBrown a :Person ;
+    rdfs:label "Kendall Brown" ;
+    :email "kendall.brown@example.com"^^xsd:string ;
+    :hasRole :Role_SystemAdministrator ;
+    :joinDate "2023-10-31"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "07700 900693"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Kendall Brown working as System Administrator on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/KendallBrown.png> .
+
+:Person_KendallJohnson a :Person ;
+    rdfs:label "Kendall Johnson" ;
+    :email "kendall.johnson@example.com"^^xsd:string ;
+    :hasRole :Role_ItSupportSpecialist ;
+    :joinDate "2022-06-02"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "01632 960009"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Kendall Johnson working as IT Support Specialist on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/KendallJohnson.png> .
+
+:Person_KendallMartin a :Person ;
+    rdfs:label "Kendall Martin" ;
+    :email "kendall.martin@example.com"^^xsd:string ;
+    :hasRole :Role_AppsecSpecialist ;
+    :joinDate "2022-04-05"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "020 7946 0776"^^xsd:string ;
+    :reportsTo :Person_CaseyAnderson ;
+    rdfs:comment "Employee Kendall Martin working as AppSec Specialist on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/KendallMartin.png> .
+
+:Person_KendallTaylor a :Person ;
+    rdfs:label "Kendall Taylor" ;
+    :email "kendall.taylor@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalRecruiter ;
+    :joinDate "2022-01-17"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "07700 900838"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Kendall Taylor working as Technical Recruiter on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/KendallTaylor.png> .
+
+:Person_LoganBrown a :Person ;
+    rdfs:label "Logan Brown" ;
+    :email "logan.brown@example.com"^^xsd:string ;
+    :hasRole :Role_HrPartner ;
+    :joinDate "2022-02-18"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "01632 960082"^^xsd:string ;
+    :reportsTo :Person_JamieThomas ;
+    rdfs:comment "Employee Logan Brown working as HR Partner on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/LoganBrown.png> .
+
+:Person_LoganGonzalez a :Person ;
+    rdfs:label "Logan Gonzalez" ;
+    :email "logan.gonzalez@example.com"^^xsd:string ;
+    :hasRole :Role_FacilitiesManager ;
+    :joinDate "2022-11-15"^^xsd:date ;
+    :memberOf :Team_WorkplaceOperations ;
+    :phoneNumber "07700 900745"^^xsd:string ;
+    :reportsTo :Person_HarperDavis ;
+    rdfs:comment "Employee Logan Gonzalez working as Facilities Manager on the Workplace Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/LoganGonzalez.png> .
+
+:Person_LoganJackson a :Person ;
+    rdfs:label "Logan Jackson" ;
+    :email "logan.jackson@example.com"^^xsd:string ;
+    :hasRole :Role_SecurityEngineer ;
+    :joinDate "2023-09-29"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "020 7946 0000"^^xsd:string ;
+    :reportsTo :Person_CaseyAnderson ;
+    rdfs:comment "Employee Logan Jackson working as Security Engineer on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/LoganJackson.png> .
+
+:Person_LoganJones a :Person ;
+    rdfs:label "Logan Jones" ;
+    :email "logan.jones@example.com"^^xsd:string ;
+    :hasRole :Role_UiLead ;
+    :joinDate "2024-02-03"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "07700 900674"^^xsd:string ;
+    :reportsTo :Person_HaydenMoore ;
+    rdfs:comment "Employee Logan Jones working as UI Lead on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/LoganJones.png> .
+
+:Person_LoganLopez a :Person ;
+    rdfs:label "Logan Lopez" ;
+    :email "logan.lopez@example.com"^^xsd:string ;
+    :hasRole :Role_VendorManager ;
+    :joinDate "2022-05-03"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "07700 900913"^^xsd:string ;
+    :reportsTo :Person_HarperMiller ;
+    rdfs:comment "Employee Logan Lopez working as Vendor Manager on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/LoganLopez.png> .
+
+:Person_LoganRodriguez a :Person ;
+    rdfs:label "Logan Rodriguez" ;
+    :email "logan.rodriguez@example.com"^^xsd:string ;
+    :hasRole :Role_StaffAccountant ;
+    :joinDate "2025-09-08"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "020 7946 0148"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Logan Rodriguez working as Staff Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/LoganRodriguez.png> .
+
+:Person_LoganThomas a :Person ;
+    rdfs:label "Logan Thomas" ;
+    :email "logan.thomas@example.com"^^xsd:string ;
+    :hasRole :Role_AppsecSpecialist ;
+    :joinDate "2023-08-02"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "07700 900453"^^xsd:string ;
+    :reportsTo :Person_CaseyAnderson ;
+    rdfs:comment "Employee Logan Thomas working as AppSec Specialist on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/LoganThomas.png> .
+
+:Person_LoganWilson a :Person ;
+    rdfs:label "Logan Wilson" ;
+    :email "logan.wilson@example.com"^^xsd:string ;
+    :hasRole :Role_UiLead ;
+    :joinDate "2022-09-02"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "01632 960427"^^xsd:string ;
+    :reportsTo :Person_HaydenMoore ;
+    rdfs:comment "Employee Logan Wilson working as UI Lead on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/LoganWilson.png> .
+
+:Person_MorganBrown a :Person ;
+    rdfs:label "Morgan Brown" ;
+    :email "morgan.brown@example.com"^^xsd:string ;
+    :hasRole :Role_ItSupportSpecialist ;
+    :joinDate "2024-07-16"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "020 7946 0357"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Morgan Brown working as IT Support Specialist on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/MorganBrown.png> .
+
+:Person_MorganJackson a :Person ;
+    rdfs:label "Morgan Jackson" ;
+    :email "morgan.jackson@example.com"^^xsd:string ;
+    :hasRole :Role_AppsecSpecialist ;
+    :joinDate "2023-04-03"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "07700 900396"^^xsd:string ;
+    :reportsTo :Person_CaseyAnderson ;
+    rdfs:comment "Employee Morgan Jackson working as AppSec Specialist on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/MorganJackson.png> .
+
+:Person_MorganMoore a :Person ;
+    rdfs:label "Morgan Moore" ;
+    :email "morgan.moore@example.com"^^xsd:string ;
+    :hasRole :Role_OfficeAdmin ;
+    :joinDate "2025-04-12"^^xsd:date ;
+    :memberOf :Team_WorkplaceOperations ;
+    :phoneNumber "020 7946 0342"^^xsd:string ;
+    :reportsTo :Person_HarperDavis ;
+    rdfs:comment "Employee Morgan Moore working as Office Admin on the Workplace Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/MorganMoore.png> .
+
+:Person_MorganSmith a :Person ;
+    rdfs:label "Morgan Smith" ;
+    :email "morgan.smith@example.com"^^xsd:string ;
+    :hasRole :Role_ItSupportSpecialist ;
+    :joinDate "2023-06-19"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "07700 900602"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Morgan Smith working as IT Support Specialist on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/MorganSmith.png> .
+
+:Person_MorganWilliams a :Person ;
+    rdfs:label "Morgan Williams" ;
+    :email "morgan.williams@example.com"^^xsd:string ;
+    :hasRole :Role_UxDesigner ;
+    :joinDate "2024-03-18"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "07700 900703"^^xsd:string ;
+    :reportsTo :Person_CaseyGonzalez ;
+    rdfs:comment "Employee Morgan Williams working as UX Designer on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/MorganWilliams.png> .
+
+:Person_PatBrown a :Person ;
+    rdfs:label "Pat Brown" ;
+    :email "pat.brown@example.com"^^xsd:string ;
+    :hasRole :Role_ProcurementSpecialist ;
+    :joinDate "2022-07-10"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "020 7946 0817"^^xsd:string ;
+    :reportsTo :Person_HarperMiller ;
+    rdfs:comment "Employee Pat Brown working as Procurement Specialist on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/PatBrown.png> .
+
+:Person_PatJones a :Person ;
+    rdfs:label "Pat Jones" ;
+    :email "pat.jones@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalPm ;
+    :joinDate "2024-07-27"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "07700 900077"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Pat Jones working as Technical PM on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/PatJones.png> .
+
+:Person_PatMoore a :Person ;
+    rdfs:label "Pat Moore" ;
+    :email "pat.moore@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalRecruiter ;
+    :joinDate "2023-05-12"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "01632 960541"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Pat Moore working as Technical Recruiter on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/PatMoore.png> .
+
+:Person_PatSmith a :Person ;
+    rdfs:label "Pat Smith" ;
+    :email "pat.smith@example.com"^^xsd:string ;
+    :hasRole :Role_VendorManager ;
+    :joinDate "2023-07-28"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "07700 900722"^^xsd:string ;
+    :reportsTo :Person_HarperMiller ;
+    rdfs:comment "Employee Pat Smith working as Vendor Manager on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/PatSmith.png> .
+
+:Person_PeytonJohnson a :Person ;
+    rdfs:label "Peyton Johnson" ;
+    :email "peyton.johnson@example.com"^^xsd:string ;
+    :hasRole :Role_ProductManager ;
+    :joinDate "2022-06-23"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "01632 960490"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Peyton Johnson working as Product Manager on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/PeytonJohnson.png> .
+
+:Person_PeytonJones a :Person ;
+    rdfs:label "Peyton Jones" ;
+    :email "peyton.jones@example.com"^^xsd:string ;
+    :hasRole :Role_FacilitiesManager ;
+    :joinDate "2024-07-09"^^xsd:date ;
+    :memberOf :Team_WorkplaceOperations ;
+    :phoneNumber "020 7946 0551"^^xsd:string ;
+    :reportsTo :Person_HarperDavis ;
+    rdfs:comment "Employee Peyton Jones working as Facilities Manager on the Workplace Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/PeytonJones.png> .
+
+:Person_PeytonSmith a :Person ;
+    rdfs:label "Peyton Smith" ;
+    :email "peyton.smith@example.com"^^xsd:string ;
+    :hasRole :Role_UxDesigner ;
+    :joinDate "2025-04-27"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "07700 900069"^^xsd:string ;
+    :reportsTo :Person_CaseyGonzalez ;
+    rdfs:comment "Employee Peyton Smith working as UX Designer on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/PeytonSmith.png> .
+
+:Person_PeytonTaylor a :Person ;
+    rdfs:label "Peyton Taylor" ;
+    :email "peyton.taylor@example.com"^^xsd:string ;
+    :hasRole :Role_SourcingSpecialist ;
+    :joinDate "2025-02-06"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "07700 900986"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Peyton Taylor working as Sourcing Specialist on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/PeytonTaylor.png> .
+
+:Person_PeytonThomas a :Person ;
+    rdfs:label "Peyton Thomas" ;
+    :email "peyton.thomas@example.com"^^xsd:string ;
+    :hasRole :Role_FrontendDeveloper ;
+    :joinDate "2024-05-02"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "020 7946 0908"^^xsd:string ;
+    :reportsTo :Person_HaydenMoore ;
+    rdfs:comment "Employee Peyton Thomas working as Frontend Developer on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/PeytonThomas.png> .
+
+:Person_PeytonWilliams a :Person ;
+    rdfs:label "Peyton Williams" ;
+    :email "peyton.williams@example.com"^^xsd:string ;
+    :hasRole :Role_FinancialAccountant ;
+    :joinDate "2025-01-14"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "020 7946 0606"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Peyton Williams working as Financial Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/PeytonWilliams.png> .
+
+:Person_QuinnGarcia a :Person ;
+    rdfs:label "Quinn Garcia" ;
+    :email "quinn.garcia@example.com"^^xsd:string ;
+    :hasRole :Role_DesignResearcher ;
+    :joinDate "2022-06-03"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "07700 900573"^^xsd:string ;
+    :reportsTo :Person_CaseyGonzalez ;
+    rdfs:comment "Employee Quinn Garcia working as Design Researcher on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/QuinnGarcia.png> .
+
+:Person_QuinnMartinez a :Person ;
+    rdfs:label "Quinn Martinez" ;
+    :email "quinn.martinez@example.com"^^xsd:string ;
+    :hasRole :Role_UxDesigner ;
+    :joinDate "2025-03-08"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "07700 900094"^^xsd:string ;
+    :reportsTo :Person_CaseyGonzalez ;
+    rdfs:comment "Employee Quinn Martinez working as UX Designer on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/QuinnMartinez.png> .
+
+:Person_QuinnMoore a :Person ;
+    rdfs:label "Quinn Moore" ;
+    :email "quinn.moore@example.com"^^xsd:string ;
+    :hasRole :Role_UxDesigner ;
+    :joinDate "2024-06-09"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "07700 900688"^^xsd:string ;
+    :reportsTo :Person_CaseyGonzalez ;
+    rdfs:comment "Employee Quinn Moore working as UX Designer on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/QuinnMoore.png> .
+
+:Person_QuinnWilson a :Person ;
+    rdfs:label "Quinn Wilson" ;
+    :email "quinn.wilson@example.com"^^xsd:string ;
+    :hasRole :Role_SourcingSpecialist ;
+    :joinDate "2025-06-29"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "020 7946 0766"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Quinn Wilson working as Sourcing Specialist on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/QuinnWilson.png> .
+
+:Person_ReeseGarcia a :Person ;
+    rdfs:label "Reese Garcia" ;
+    :email "reese.garcia@example.com"^^xsd:string ;
+    :hasRole :Role_FinancialAccountant ;
+    :joinDate "2022-01-20"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "020 7946 0361"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Reese Garcia working as Financial Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ReeseGarcia.png> .
+
+:Person_ReeseGonzalez a :Person ;
+    rdfs:label "Reese Gonzalez" ;
+    :email "reese.gonzalez@example.com"^^xsd:string ;
+    :hasRole :Role_UiLead ;
+    :joinDate "2023-05-24"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "07700 900537"^^xsd:string ;
+    :reportsTo :Person_HaydenMoore ;
+    rdfs:comment "Employee Reese Gonzalez working as UI Lead on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ReeseGonzalez.png> .
+
+:Person_ReeseMartinez a :Person ;
+    rdfs:label "Reese Martinez" ;
+    :email "reese.martinez@example.com"^^xsd:string ;
+    :hasRole :Role_SourcingSpecialist ;
+    :joinDate "2023-09-15"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "07700 900240"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Reese Martinez working as Sourcing Specialist on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ReeseMartinez.png> .
+
+:Person_ReeseWilliams a :Person ;
+    rdfs:label "Reese Williams" ;
+    :email "reese.williams@example.com"^^xsd:string ;
+    :hasRole :Role_ItSupportSpecialist ;
+    :joinDate "2023-07-11"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "020 7946 0363"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Reese Williams working as IT Support Specialist on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ReeseWilliams.png> .
+
+:Person_ReeseWilson a :Person ;
+    rdfs:label "Reese Wilson" ;
+    :email "reese.wilson@example.com"^^xsd:string ;
+    :hasRole :Role_FacilitiesManager ;
+    :joinDate "2022-12-03"^^xsd:date ;
+    :memberOf :Team_WorkplaceOperations ;
+    :phoneNumber "01632 960564"^^xsd:string ;
+    :reportsTo :Person_HarperDavis ;
+    rdfs:comment "Employee Reese Wilson working as Facilities Manager on the Workplace Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/ReeseWilson.png> .
+
+:Person_RileyDavis a :Person ;
+    rdfs:label "Riley Davis" ;
+    :email "riley.davis@example.com"^^xsd:string ;
+    :hasRole :Role_OnboardingLead ;
+    :joinDate "2024-01-25"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "01632 960893"^^xsd:string ;
+    :reportsTo :Person_JamieThomas ;
+    rdfs:comment "Employee Riley Davis working as Onboarding Lead on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RileyDavis.png> .
+
+:Person_RileyJackson a :Person ;
+    rdfs:label "Riley Jackson" ;
+    :email "riley.jackson@example.com"^^xsd:string ;
+    :hasRole :Role_CloudArchitect ;
+    :joinDate "2023-01-02"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "020 7946 0666"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Riley Jackson working as Cloud Architect on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RileyJackson.png> .
+
+:Person_RileyJones a :Person ;
+    rdfs:label "Riley Jones" ;
+    :email "riley.jones@example.com"^^xsd:string ;
+    :hasRole :Role_HrPartner ;
+    :joinDate "2024-10-07"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "01632 960428"^^xsd:string ;
+    :reportsTo :Person_JamieThomas ;
+    rdfs:comment "Employee Riley Jones working as HR Partner on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RileyJones.png> .
+
+:Person_RileyLopez a :Person ;
+    rdfs:label "Riley Lopez" ;
+    :email "riley.lopez@example.com"^^xsd:string ;
+    :hasRole :Role_ProcurementSpecialist ;
+    :joinDate "2022-10-19"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "01632 960477"^^xsd:string ;
+    :reportsTo :Person_HarperMiller ;
+    rdfs:comment "Employee Riley Lopez working as Procurement Specialist on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RileyLopez.png> .
+
+:Person_RileySmith a :Person ;
+    rdfs:label "Riley Smith" ;
+    :email "riley.smith@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalPm ;
+    :joinDate "2025-04-04"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "01632 960906"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Riley Smith working as Technical PM on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RileySmith.png> .
+
+:Person_RileyTaylor a :Person ;
+    rdfs:label "Riley Taylor" ;
+    :email "riley.taylor@example.com"^^xsd:string ;
+    :hasRole :Role_StaffAccountant ;
+    :joinDate "2024-02-10"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "020 7946 0414"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Riley Taylor working as Staff Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RileyTaylor.png> .
+
+:Person_RowanGarcia a :Person ;
+    rdfs:label "Rowan Garcia" ;
+    :email "rowan.garcia@example.com"^^xsd:string ;
+    :hasRole :Role_ProductManager ;
+    :joinDate "2024-04-25"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "01632 960585"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Rowan Garcia working as Product Manager on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RowanGarcia.png> .
+
+:Person_RowanHernandez a :Person ;
+    rdfs:label "Rowan Hernandez" ;
+    :email "rowan.hernandez@example.com"^^xsd:string ;
+    :hasRole :Role_SystemAdministrator ;
+    :joinDate "2024-03-15"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "01632 960799"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Rowan Hernandez working as System Administrator on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RowanHernandez.png> .
+
+:Person_RowanLopez a :Person ;
+    rdfs:label "Rowan Lopez" ;
+    :email "rowan.lopez@example.com"^^xsd:string ;
+    :hasRole :Role_ItSupportSpecialist ;
+    :joinDate "2025-12-06"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "01632 960157"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Rowan Lopez working as IT Support Specialist on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RowanLopez.png> .
+
+:Person_RowanSmith a :Person ;
+    rdfs:label "Rowan Smith" ;
+    :email "rowan.smith@example.com"^^xsd:string ;
+    :hasRole :Role_FacilitiesManager ;
+    :joinDate "2023-10-06"^^xsd:date ;
+    :memberOf :Team_WorkplaceOperations ;
+    :phoneNumber "020 7946 0723"^^xsd:string ;
+    :reportsTo :Person_HarperDavis ;
+    rdfs:comment "Employee Rowan Smith working as Facilities Manager on the Workplace Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RowanSmith.png> .
+
+:Person_RowanWilliams a :Person ;
+    rdfs:label "Rowan Williams" ;
+    :email "rowan.williams@example.com"^^xsd:string ;
+    :hasRole :Role_ProcurementSpecialist ;
+    :joinDate "2023-02-25"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "01632 960307"^^xsd:string ;
+    :reportsTo :Person_HarperMiller ;
+    rdfs:comment "Employee Rowan Williams working as Procurement Specialist on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RowanWilliams.png> .
+
+:Person_SamDavis a :Person ;
+    rdfs:label "Sam Davis" ;
+    :email "sam.davis@example.com"^^xsd:string ;
+    :hasRole :Role_HrPartner ;
+    :joinDate "2025-04-26"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "07700 900784"^^xsd:string ;
+    :reportsTo :Person_JamieThomas ;
+    rdfs:comment "Employee Sam Davis working as HR Partner on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/SamDavis.png> .
+
+:Person_SamHernandez a :Person ;
+    rdfs:label "Sam Hernandez" ;
+    :email "sam.hernandez@example.com"^^xsd:string ;
+    :hasRole :Role_UxDesigner ;
+    :joinDate "2025-09-18"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "020 7946 0240"^^xsd:string ;
+    :reportsTo :Person_CaseyGonzalez ;
+    rdfs:comment "Employee Sam Hernandez working as UX Designer on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/SamHernandez.png> .
+
+:Person_SamMartin a :Person ;
+    rdfs:label "Sam Martin" ;
+    :email "sam.martin@example.com"^^xsd:string ;
+    :hasRole :Role_HrPartner ;
+    :joinDate "2022-01-14"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "020 7946 0510"^^xsd:string ;
+    :reportsTo :Person_JamieThomas ;
+    rdfs:comment "Employee Sam Martin working as HR Partner on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/SamMartin.png> .
+
+:Person_SamMartinez a :Person ;
+    rdfs:label "Sam Martinez" ;
+    :email "sam.martinez@example.com"^^xsd:string ;
+    :hasRole :Role_ProcurementSpecialist ;
+    :joinDate "2024-10-04"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "07700 900770"^^xsd:string ;
+    :reportsTo :Person_HarperMiller ;
+    rdfs:comment "Employee Sam Martinez working as Procurement Specialist on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/SamMartinez.png> .
+
+:Person_SamMiller a :Person ;
+    rdfs:label "Sam Miller" ;
+    :email "sam.miller@example.com"^^xsd:string ;
+    :hasRole :Role_VendorManager ;
+    :joinDate "2024-12-21"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "07700 900052"^^xsd:string ;
+    :reportsTo :Person_HarperMiller ;
+    rdfs:comment "Employee Sam Miller working as Vendor Manager on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/SamMiller.png> .
+
+:Person_SamThomas a :Person ;
+    rdfs:label "Sam Thomas" ;
+    :email "sam.thomas@example.com"^^xsd:string ;
+    :hasRole :Role_AppsecSpecialist ;
+    :joinDate "2024-11-22"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "01632 960678"^^xsd:string ;
+    :reportsTo :Person_CaseyAnderson ;
+    rdfs:comment "Employee Sam Thomas working as AppSec Specialist on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/SamThomas.png> .
+
+:Person_SkylerBrown a :Person ;
+    rdfs:label "Skyler Brown" ;
+    :email "skyler.brown@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalRecruiter ;
+    :joinDate "2024-01-26"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "07700 900464"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Skyler Brown working as Technical Recruiter on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/SkylerBrown.png> .
+
+:Person_SkylerTaylor a :Person ;
+    rdfs:label "Skyler Taylor" ;
+    :email "skyler.taylor@example.com"^^xsd:string ;
+    :hasRole :Role_SourcingSpecialist ;
+    :joinDate "2023-08-21"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "01632 960547"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Skyler Taylor working as Sourcing Specialist on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/SkylerTaylor.png> .
+
+:Person_TaylorDavis a :Person ;
+    rdfs:label "Taylor Davis" ;
+    :email "taylor.davis@example.com"^^xsd:string ;
+    :hasRole :Role_SecurityEngineer ;
+    :joinDate "2022-05-22"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "020 7946 0020"^^xsd:string ;
+    :reportsTo :Person_CaseyAnderson ;
+    rdfs:comment "Employee Taylor Davis working as Security Engineer on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/TaylorDavis.png> .
+
+:Person_TaylorGonzalez a :Person ;
+    rdfs:label "Taylor Gonzalez" ;
+    :email "taylor.gonzalez@example.com"^^xsd:string ;
+    :hasRole :Role_StaffAccountant ;
+    :joinDate "2023-12-11"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "07700 900068"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Taylor Gonzalez working as Staff Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/TaylorGonzalez.png> .
+
+:Person_TaylorHernandez a :Person ;
+    rdfs:label "Taylor Hernandez" ;
+    :email "taylor.hernandez@example.com"^^xsd:string ;
+    :hasRole :Role_ProcurementSpecialist ;
+    :joinDate "2025-12-28"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "020 7946 0993"^^xsd:string ;
+    :reportsTo :Person_HarperMiller ;
+    rdfs:comment "Employee Taylor Hernandez working as Procurement Specialist on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/TaylorHernandez.png> .
+
+:Person_TaylorJones a :Person ;
+    rdfs:label "Taylor Jones" ;
+    :email "taylor.jones@example.com"^^xsd:string ;
+    :hasRole :Role_HrPartner ;
+    :joinDate "2023-02-05"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "07700 900833"^^xsd:string ;
+    :reportsTo :Person_JamieThomas ;
+    rdfs:comment "Employee Taylor Jones working as HR Partner on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/TaylorJones.png> .
+
+:Person_TaylorLopez a :Person ;
+    rdfs:label "Taylor Lopez" ;
+    :email "taylor.lopez@example.com"^^xsd:string ;
+    :hasRole :Role_UxDesigner ;
+    :joinDate "2023-04-30"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "020 7946 0779"^^xsd:string ;
+    :reportsTo :Person_CaseyGonzalez ;
+    rdfs:comment "Employee Taylor Lopez working as UX Designer on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/TaylorLopez.png> .
+
+:Person_TaylorMiller a :Person ;
+    rdfs:label "Taylor Miller" ;
+    :email "taylor.miller@example.com"^^xsd:string ;
+    :hasRole :Role_HrPartner ;
+    :joinDate "2022-11-05"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "020 7946 0272"^^xsd:string ;
+    :reportsTo :Person_JamieThomas ;
+    rdfs:comment "Employee Taylor Miller working as HR Partner on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/TaylorMiller.png> .
+
+:Person_TaylorWilliams a :Person ;
+    rdfs:label "Taylor Williams" ;
+    :email "taylor.williams@example.com"^^xsd:string ;
+    :hasRole :Role_SystemAdministrator ;
+    :joinDate "2023-04-24"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "01632 960048"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Taylor Williams working as System Administrator on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/TaylorWilliams.png> .
+
+:Person_TaylorWilson a :Person ;
+    rdfs:label "Taylor Wilson" ;
+    :email "taylor.wilson@example.com"^^xsd:string ;
+    :hasRole :Role_SourcingSpecialist ;
+    :joinDate "2023-02-15"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "07700 900015"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Taylor Wilson working as Sourcing Specialist on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/TaylorWilson.png> .
+
+:Proc_AnnualBudgetPlanning a :Process ;
+    rdfs:label "Annual Budget Planning" ;
+    :hasStep :Step_AnnualBudgetPlanning_DepartmentForecastSubmission,
+        :Step_AnnualBudgetPlanning_ExecutiveBudgetReview,
+        :Step_AnnualBudgetPlanning_LineItemReconciliation,
+        :Step_AnnualBudgetPlanning_VendorContractRenewals ;
+    rdfs:comment "Administrative governance workflow: Annual Budget Planning." .
+
+:Proc_CloudInfrastructureChangeRequest a :Process ;
+    rdfs:label "Cloud Infrastructure Change Request" ;
+    :hasStep :Step_CloudInfrastructureChangeRequest_ArchitectureImpactAssessment,
+        :Step_CloudInfrastructureChangeRequest_CostEstimateApproval,
+        :Step_CloudInfrastructureChangeRequest_SecurityThreatModelling,
+        :Step_CloudInfrastructureChangeRequest_SreReliabilitySignoff ;
+    rdfs:comment "Administrative governance workflow: Cloud Infrastructure Change Request." .
+
+:Proc_ContractorEngagementApproval a :Process ;
+    rdfs:label "Contractor Engagement Approval" ;
+    :hasStep :Step_ContractorEngagementApproval_BudgetAvailabilityCheck,
+        :Step_ContractorEngagementApproval_ContractExecutionSignoff,
+        :Step_ContractorEngagementApproval_SecurityBackgroundReview,
+        :Step_ContractorEngagementApproval_VendorDueDiligence ;
+    rdfs:comment "Administrative governance workflow: Contractor Engagement Approval." .
+
+:Proc_DataPrivacyComplianceAudit a :Process ;
+    rdfs:label "Data Privacy Compliance Audit" ;
+    :hasStep :Step_DataPrivacyComplianceAudit_AccessControlAudit,
+        :Step_DataPrivacyComplianceAudit_DataInventoryReview,
+        :Step_DataPrivacyComplianceAudit_PolicyComplianceVerification,
+        :Step_DataPrivacyComplianceAudit_RemediationBudgetApproval ;
+    rdfs:comment "Administrative governance workflow: Data Privacy Compliance Audit." .
+
+:Proc_DesignSystemUpdate a :Process ;
+    rdfs:label "Design System Update" ;
+    :hasStep :Step_DesignSystemUpdate_ComponentSpecificationReview,
+        :Step_DesignSystemUpdate_DesignResearchValidation,
+        :Step_DesignSystemUpdate_FrontendImplementationSignoff,
+        :Step_DesignSystemUpdate_ProductAcceptance ;
+    rdfs:comment "Administrative governance workflow: Design System Update." .
+
+:Proc_EmergencyAccessEscalation a :Process ;
+    rdfs:label "Emergency Access Escalation" ;
+    :hasStep :Step_EmergencyAccessEscalation_IncidentSeverityConfirmation,
+        :Step_EmergencyAccessEscalation_PostaccessAuditReview,
+        :Step_EmergencyAccessEscalation_TemporaryPrivilegeGrant ;
+    rdfs:comment "Administrative governance workflow: Emergency Access Escalation." .
+
+:Proc_EmployeeOffboarding a :Process ;
+    rdfs:label "Employee Offboarding" ;
+    :hasStep :Step_EmployeeOffboarding_AccessRevocationReview,
+        :Step_EmployeeOffboarding_AssetReturnVerification,
+        :Step_EmployeeOffboarding_FinalPayrollClearance,
+        :Step_EmployeeOffboarding_ManagerExitConfirmation ;
+    rdfs:comment "Administrative governance workflow: Employee Offboarding." .
+
+:Proc_FacilitiesMaintenanceRequest a :Process ;
+    rdfs:label "Facilities Maintenance Request" ;
+    :hasStep :Step_FacilitiesMaintenanceRequest_IssueAssessmentAndPrioritization,
+        :Step_FacilitiesMaintenanceRequest_MaintenanceSpendApproval,
+        :Step_FacilitiesMaintenanceRequest_VendorQuoteEvaluation,
+        :Step_FacilitiesMaintenanceRequest_WorkCompletionVerification ;
+    rdfs:comment "Administrative governance workflow: Facilities Maintenance Request." .
+
+:Proc_HardwareProcurementProcess a :Process ;
+    rdfs:label "Hardware Procurement Process" ;
+    :hasStep :Step_HardwareProcurementProcess_FinanceSpendSignoff,
+        :Step_HardwareProcurementProcess_ManagerEndorsement ;
+    rdfs:comment "Administrative governance workflow: Hardware Procurement Process." .
+
+:Proc_HighValueInfrastructureUpgrade a :Process ;
+    rdfs:label "High Value Infrastructure Upgrade" ;
+    :hasStep :Step_HighValueInfrastructureUpgrade_ArchitecturalReview,
+        :Step_HighValueInfrastructureUpgrade_CfoApprovalStep ;
+    rdfs:comment "Administrative governance workflow: High Value Infrastructure Upgrade." .
+
+:Proc_InternalToolDevelopmentRequest a :Process ;
+    rdfs:label "Internal Tool Development Request" ;
+    :hasStep :Step_InternalToolDevelopmentRequest_FrontendTechnicalReview,
+        :Step_InternalToolDevelopmentRequest_InfrastructureProvisioningApproval,
+        :Step_InternalToolDevelopmentRequest_ProductRequirementsReview,
+        :Step_InternalToolDevelopmentRequest_UxFeasibilityAssessment ;
+    rdfs:comment "Administrative governance workflow: Internal Tool Development Request." .
+
+:Proc_NewEmployeeOnboarding a :Process ;
+    rdfs:label "New Employee Onboarding" ;
+    :hasStep :Step_NewEmployeeOnboarding_AccessCredentialIssuance,
+        :Step_NewEmployeeOnboarding_IdentityVerification,
+        :Step_NewEmployeeOnboarding_OnboardingChecklistSignoff,
+        :Step_NewEmployeeOnboarding_WorkstationProvisioning ;
+    rdfs:comment "Administrative governance workflow: New Employee Onboarding." .
+
+:Proc_OfficeRelocationProcess a :Process ;
+    rdfs:label "Office Relocation Process" ;
+    :hasStep :Step_OfficeRelocationProcess_BudgetAllocationApproval,
+        :Step_OfficeRelocationProcess_ItInfrastructurePlanning,
+        :Step_OfficeRelocationProcess_SpaceRequirementsAssessment,
+        :Step_OfficeRelocationProcess_StaffCommunicationSignoff ;
+    rdfs:comment "Administrative governance workflow: Office Relocation Process." .
+
+:Proc_ProductionSystemAccessRequest a :Process ;
+    rdfs:label "Production System Access Request" ;
+    :hasStep :Step_ProductionSystemAccessRequest_LeadSystemApproval,
+        :Step_ProductionSystemAccessRequest_SecurityComplianceCheck ;
+    rdfs:comment "Administrative governance workflow: Production System Access Request." .
+
+:Proc_RecruitmentCampaignApproval a :Process ;
+    rdfs:label "Recruitment Campaign Approval" ;
+    :hasStep :Step_RecruitmentCampaignApproval_HeadcountJustificationReview,
+        :Step_RecruitmentCampaignApproval_JobDescriptionSignoff,
+        :Step_RecruitmentCampaignApproval_RecruitmentSpendAuthorization,
+        :Step_RecruitmentCampaignApproval_SourcingStrategyApproval ;
+    rdfs:comment "Administrative governance workflow: Recruitment Campaign Approval." .
+
+:Proc_SaasProcurementWorkflow a :Process ;
+    rdfs:label "SaaS Procurement Workflow" ;
+    :hasStep :Step_SaasProcurementWorkflow_DepartmentHeadReview,
+        :Step_SaasProcurementWorkflow_ExecutiveSpendClearance,
+        :Step_SaasProcurementWorkflow_VendorSecurityAssessment ;
+    rdfs:comment "Administrative governance workflow: SaaS Procurement Workflow." .
+
+:Proc_SecurityIncidentResponse a :Process ;
+    rdfs:label "Security Incident Response" ;
+    :hasStep :Step_SecurityIncidentResponse_ContainmentActionApproval,
+        :Step_SecurityIncidentResponse_IncidentTriageAndClassification,
+        :Step_SecurityIncidentResponse_InfrastructureRemediation,
+        :Step_SecurityIncidentResponse_PostincidentReviewSignoff ;
+    rdfs:comment "Administrative governance workflow: Security Incident Response." .
+
+:Proc_StandardSoftwareRequest a :Process ;
+    rdfs:label "Standard Software Request" ;
+    :hasStep :Step_StandardSoftwareRequest_HelpdeskAutoVerification ;
+    rdfs:comment "Administrative governance workflow: Standard Software Request." .
+
+:Proc_TravelAndExpenseReimbursement a :Process ;
+    rdfs:label "Travel and Expense Reimbursement" ;
+    :hasStep :Step_TravelAndExpenseReimbursement_ExpensePaymentAuthorization,
+        :Step_TravelAndExpenseReimbursement_PolicyComplianceCheck,
+        :Step_TravelAndExpenseReimbursement_ReceiptVerification ;
+    rdfs:comment "Administrative governance workflow: Travel and Expense Reimbursement." .
+
+:approvedBy a owl:ObjectProperty ;
+    rdfs:label "approved by" ;
+    rdfs:comment "Identifies the designated Role authorized to evaluate and sign off on an ApprovalStep." ;
+    rdfs:domain :ApprovalStep ;
+    rdfs:range :Role .
+
+:associatedChannel a owl:ObjectProperty ;
+    rdfs:label "associated channel" ;
+    rdfs:comment "Links an entity (Team, Service, Process) to its primary communication Channel." ;
+    rdfs:range :Channel .
+
+:belongsToDepartment a owl:ObjectProperty ;
+    rdfs:label "belongs to department" ;
+    rdfs:comment "Links a Team to its parent Department within corporate structure." ;
+    rdfs:domain :Team ;
+    rdfs:range :Department .
+
+:email a owl:DatatypeProperty ;
+    rdfs:label "email address" ;
+    rdfs:comment "The corporate email address for a Person." ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:hasRole a owl:ObjectProperty ;
+    rdfs:label "has role" ;
+    rdfs:comment "Links a Person to their assigned official Role or job title." ;
+    rdfs:domain :Person ;
+    rdfs:range :Role .
+
+:hasStep a owl:ObjectProperty ;
+    rdfs:label "has step" ;
+    rdfs:comment "Connects an overall Process workflow to an individual ApprovalStep." ;
+    rdfs:domain :Process ;
+    rdfs:range :ApprovalStep .
+
+:joinDate a owl:DatatypeProperty ;
+    rdfs:label "join date" ;
+    rdfs:comment "The date a Person joined the organization." ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:date .
+
+:managedBy a owl:ObjectProperty ;
+    rdfs:label "managed by" ;
+    rdfs:comment "Designates the Person responsible for leading or managing a Team." ;
+    rdfs:domain :Team ;
+    rdfs:range :Person .
+
+:memberOf a owl:ObjectProperty ;
+    rdfs:label "member of" ;
+    rdfs:comment "Associates a Person with the Team they belong to." ;
+    rdfs:domain :Person ;
+    rdfs:range :Team .
+
+:owns a owl:ObjectProperty ;
+    rdfs:label "owns" ;
+    rdfs:comment "Indicates that a specific Team is responsible for maintaining and supporting a Service." ;
+    rdfs:domain :Team ;
+    rdfs:range :Service .
+
+:phoneNumber a owl:DatatypeProperty ;
+    rdfs:label "phone number" ;
+    rdfs:comment "The contact telephone number for a Person." ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:reportsTo a owl:ObjectProperty ;
+    rdfs:label "reports to" ;
+    rdfs:comment "Links a Person to their direct line manager." ;
+    rdfs:domain :Person ;
+    rdfs:range :Person .
+
+:requiresAccess a owl:ObjectProperty ;
+    rdfs:label "requires access to" ;
+    rdfs:comment "Specifies that a Role requires default access to a Service to perform duties." ;
+    rdfs:domain :Role ;
+    rdfs:range :Service .
+
+:spendLimit a owl:DatatypeProperty ;
+    rdfs:label "spend limit" ;
+    rdfs:comment "The maximum financial monetary value authorized at this ApprovalStep." ;
+    rdfs:domain :ApprovalStep ;
+    rdfs:range xsd:decimal .
+
+:Chan_Svc_AwsInfrastructure a :Channel ;
+    rdfs:label "#svc-aws-infrastructure" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on AWS Infrastructure." .
+
+:Chan_Svc_ConfluenceWiki a :Channel ;
+    rdfs:label "#svc-confluence-wiki" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on Confluence Wiki." .
+
+:Chan_Svc_CoupaSpendPlatform a :Channel ;
+    rdfs:label "#svc-coupa-spend-platform" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on Coupa Spend Platform." .
+
+:Chan_Svc_DatadogMonitoring a :Channel ;
+    rdfs:label "#svc-datadog-monitoring" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on Datadog Monitoring." .
+
+:Chan_Svc_FigmaDesign a :Channel ;
+    rdfs:label "#svc-figma-design" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on Figma Design." .
+
+:Chan_Svc_GithubEnterprise a :Channel ;
+    rdfs:label "#svc-github-enterprise" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on GitHub Enterprise." .
+
+:Chan_Svc_JiraSoftware a :Channel ;
+    rdfs:label "#svc-jira-software" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on Jira Software." .
+
+:Chan_Svc_OktaIdentity a :Channel ;
+    rdfs:label "#svc-okta-identity" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on Okta Identity." .
+
+:Chan_Svc_PagerdutyIncidentResponse a :Channel ;
+    rdfs:label "#svc-pagerduty-incident-response" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on PagerDuty Incident Response." .
+
+:Chan_Svc_QuickbooksOnline a :Channel ;
+    rdfs:label "#svc-quickbooks-online" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on QuickBooks Online." .
+
+:Chan_Svc_WorkdayHris a :Channel ;
+    rdfs:label "#svc-workday-hris" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on Workday HRIS." .
+
+:Chan_Svc_ZoomWorkplace a :Channel ;
+    rdfs:label "#svc-zoom-workplace" ;
+    rdfs:comment "Dedicated communication channel for support and alerts on Zoom Workplace." .
+
+:Chan_Team_CoreFrontend a :Channel ;
+    rdfs:label "#team-core-frontend" ;
+    rdfs:comment "Slack channel for discussions within the Core Frontend team." .
+
+:Chan_Team_CorporateAccounting a :Channel ;
+    rdfs:label "#team-corporate-accounting" ;
+    rdfs:comment "Slack channel for discussions within the Corporate Accounting team." .
+
+:Chan_Team_ItSupportServices a :Channel ;
+    rdfs:label "#team-it-support-services" ;
+    rdfs:comment "Slack channel for discussions within the IT Support Services team." .
+
+:Chan_Team_PeopleExperience a :Channel ;
+    rdfs:label "#team-people-experience" ;
+    rdfs:comment "Slack channel for discussions within the People Experience team." .
+
+:Chan_Team_PlatformInfrastructure a :Channel ;
+    rdfs:label "#team-platform-infrastructure" ;
+    rdfs:comment "Slack channel for discussions within the Platform Infrastructure team." .
+
+:Chan_Team_Procurement a :Channel ;
+    rdfs:label "#team-procurement" ;
+    rdfs:comment "Slack channel for discussions within the Procurement team." .
+
+:Chan_Team_ProductManagement a :Channel ;
+    rdfs:label "#team-product-management" ;
+    rdfs:comment "Slack channel for discussions within the Product Management team." .
+
+:Chan_Team_SecurityOperations a :Channel ;
+    rdfs:label "#team-security-operations" ;
+    rdfs:comment "Slack channel for discussions within the Security Operations team." .
+
+:Chan_Team_TalentAcquisition a :Channel ;
+    rdfs:label "#team-talent-acquisition" ;
+    rdfs:comment "Slack channel for discussions within the Talent Acquisition team." .
+
+:Chan_Team_UxResearch a :Channel ;
+    rdfs:label "#team-ux-research" ;
+    rdfs:comment "Slack channel for discussions within the UX Research team." .
+
+:Chan_Team_WorkplaceOperations a :Channel ;
+    rdfs:label "#team-workplace-operations" ;
+    rdfs:comment "Slack channel for discussions within the Workplace Operations team." .
+
+:Step_AnnualBudgetPlanning_DepartmentForecastSubmission a :ApprovalStep ;
+    rdfs:label "Department Forecast Submission" ;
+    :approvedBy :Role_ProductManager ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Department Forecast Submission' assigned to Product Manager with spend limit $0.00." .
+
+:Step_AnnualBudgetPlanning_ExecutiveBudgetReview a :ApprovalStep ;
+    rdfs:label "Executive Budget Review" ;
+    :approvedBy :Role_FinancialAccountant ;
+    :spendLimit 500000.0 ;
+    rdfs:comment "Approval stage 'Executive Budget Review' assigned to Financial Accountant with spend limit $500000.00." .
+
+:Step_AnnualBudgetPlanning_LineItemReconciliation a :ApprovalStep ;
+    rdfs:label "Line Item Reconciliation" ;
+    :approvedBy :Role_StaffAccountant ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Line Item Reconciliation' assigned to Staff Accountant with spend limit $0.00." .
+
+:Step_AnnualBudgetPlanning_VendorContractRenewals a :ApprovalStep ;
+    rdfs:label "Vendor Contract Renewals" ;
+    :approvedBy :Role_VendorManager ;
+    :spendLimit 200000.0 ;
+    rdfs:comment "Approval stage 'Vendor Contract Renewals' assigned to Vendor Manager with spend limit $200000.00." .
+
+:Step_CloudInfrastructureChangeRequest_ArchitectureImpactAssessment a :ApprovalStep ;
+    rdfs:label "Architecture Impact Assessment" ;
+    :approvedBy :Role_CloudArchitect ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Architecture Impact Assessment' assigned to Cloud Architect with spend limit $0.00." .
+
+:Step_CloudInfrastructureChangeRequest_CostEstimateApproval a :ApprovalStep ;
+    rdfs:label "Cost Estimate Approval" ;
+    :approvedBy :Role_FinancialAccountant ;
+    :spendLimit 15000.0 ;
+    rdfs:comment "Approval stage 'Cost Estimate Approval' assigned to Financial Accountant with spend limit $15000.00." .
+
+:Step_CloudInfrastructureChangeRequest_SecurityThreatModelling a :ApprovalStep ;
+    rdfs:label "Security Threat Modelling" ;
+    :approvedBy :Role_SecurityEngineer ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Security Threat Modelling' assigned to Security Engineer with spend limit $0.00." .
+
+:Step_CloudInfrastructureChangeRequest_SreReliabilitySignoff a :ApprovalStep ;
+    rdfs:label "SRE Reliability Sign-off" ;
+    :approvedBy :Role_SiteReliabilityEngineer ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'SRE Reliability Sign-off' assigned to Site Reliability Engineer with spend limit $0.00." .
+
+:Step_ContractorEngagementApproval_BudgetAvailabilityCheck a :ApprovalStep ;
+    rdfs:label "Budget Availability Check" ;
+    :approvedBy :Role_StaffAccountant ;
+    :spendLimit 5000.0 ;
+    rdfs:comment "Approval stage 'Budget Availability Check' assigned to Staff Accountant with spend limit $5000.00." .
+
+:Step_ContractorEngagementApproval_ContractExecutionSignoff a :ApprovalStep ;
+    rdfs:label "Contract Execution Sign-off" ;
+    :approvedBy :Role_ProcurementSpecialist ;
+    :spendLimit 50000.0 ;
+    rdfs:comment "Approval stage 'Contract Execution Sign-off' assigned to Procurement Specialist with spend limit $50000.00." .
+
+:Step_ContractorEngagementApproval_SecurityBackgroundReview a :ApprovalStep ;
+    rdfs:label "Security Background Review" ;
+    :approvedBy :Role_AppsecSpecialist ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Security Background Review' assigned to AppSec Specialist with spend limit $0.00." .
+
+:Step_ContractorEngagementApproval_VendorDueDiligence a :ApprovalStep ;
+    rdfs:label "Vendor Due Diligence" ;
+    :approvedBy :Role_VendorManager ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Vendor Due Diligence' assigned to Vendor Manager with spend limit $0.00." .
+
+:Step_DataPrivacyComplianceAudit_AccessControlAudit a :ApprovalStep ;
+    rdfs:label "Access Control Audit" ;
+    :approvedBy :Role_SecurityEngineer ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Access Control Audit' assigned to Security Engineer with spend limit $0.00." .
+
+:Step_DataPrivacyComplianceAudit_DataInventoryReview a :ApprovalStep ;
+    rdfs:label "Data Inventory Review" ;
+    :approvedBy :Role_SystemAdministrator ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Data Inventory Review' assigned to System Administrator with spend limit $0.00." .
+
+:Step_DataPrivacyComplianceAudit_PolicyComplianceVerification a :ApprovalStep ;
+    rdfs:label "Policy Compliance Verification" ;
+    :approvedBy :Role_AppsecSpecialist ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Policy Compliance Verification' assigned to AppSec Specialist with spend limit $0.00." .
+
+:Step_DataPrivacyComplianceAudit_RemediationBudgetApproval a :ApprovalStep ;
+    rdfs:label "Remediation Budget Approval" ;
+    :approvedBy :Role_FinancialAccountant ;
+    :spendLimit 10000.0 ;
+    rdfs:comment "Approval stage 'Remediation Budget Approval' assigned to Financial Accountant with spend limit $10000.00." .
+
+:Step_DesignSystemUpdate_ComponentSpecificationReview a :ApprovalStep ;
+    rdfs:label "Component Specification Review" ;
+    :approvedBy :Role_UxDesigner ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Component Specification Review' assigned to UX Designer with spend limit $0.00." .
+
+:Step_DesignSystemUpdate_DesignResearchValidation a :ApprovalStep ;
+    rdfs:label "Design Research Validation" ;
+    :approvedBy :Role_DesignResearcher ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Design Research Validation' assigned to Design Researcher with spend limit $0.00." .
+
+:Step_DesignSystemUpdate_FrontendImplementationSignoff a :ApprovalStep ;
+    rdfs:label "Frontend Implementation Sign-off" ;
+    :approvedBy :Role_FrontendDeveloper ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Frontend Implementation Sign-off' assigned to Frontend Developer with spend limit $0.00." .
+
+:Step_DesignSystemUpdate_ProductAcceptance a :ApprovalStep ;
+    rdfs:label "Product Acceptance" ;
+    :approvedBy :Role_ProductManager ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Product Acceptance' assigned to Product Manager with spend limit $0.00." .
+
+:Step_EmergencyAccessEscalation_IncidentSeverityConfirmation a :ApprovalStep ;
+    rdfs:label "Incident Severity Confirmation" ;
+    :approvedBy :Role_SiteReliabilityEngineer ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Incident Severity Confirmation' assigned to Site Reliability Engineer with spend limit $0.00." .
+
+:Step_EmergencyAccessEscalation_PostaccessAuditReview a :ApprovalStep ;
+    rdfs:label "Post-Access Audit Review" ;
+    :approvedBy :Role_AppsecSpecialist ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Post-Access Audit Review' assigned to AppSec Specialist with spend limit $0.00." .
+
+:Step_EmergencyAccessEscalation_TemporaryPrivilegeGrant a :ApprovalStep ;
+    rdfs:label "Temporary Privilege Grant" ;
+    :approvedBy :Role_SecurityEngineer ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Temporary Privilege Grant' assigned to Security Engineer with spend limit $0.00." .
+
+:Step_EmployeeOffboarding_AccessRevocationReview a :ApprovalStep ;
+    rdfs:label "Access Revocation Review" ;
+    :approvedBy :Role_SecurityEngineer ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Access Revocation Review' assigned to Security Engineer with spend limit $0.00." .
+
+:Step_EmployeeOffboarding_AssetReturnVerification a :ApprovalStep ;
+    rdfs:label "Asset Return Verification" ;
+    :approvedBy :Role_FacilitiesManager ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Asset Return Verification' assigned to Facilities Manager with spend limit $0.00." .
+
+:Step_EmployeeOffboarding_FinalPayrollClearance a :ApprovalStep ;
+    rdfs:label "Final Payroll Clearance" ;
+    :approvedBy :Role_FinancialAccountant ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Final Payroll Clearance' assigned to Financial Accountant with spend limit $0.00." .
+
+:Step_EmployeeOffboarding_ManagerExitConfirmation a :ApprovalStep ;
+    rdfs:label "Manager Exit Confirmation" ;
+    :approvedBy :Role_HrPartner ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Manager Exit Confirmation' assigned to HR Partner with spend limit $0.00." .
+
+:Step_FacilitiesMaintenanceRequest_IssueAssessmentAndPrioritization a :ApprovalStep ;
+    rdfs:label "Issue Assessment and Prioritization" ;
+    :approvedBy :Role_FacilitiesManager ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Issue Assessment and Prioritization' assigned to Facilities Manager with spend limit $0.00." .
+
+:Step_FacilitiesMaintenanceRequest_MaintenanceSpendApproval a :ApprovalStep ;
+    rdfs:label "Maintenance Spend Approval" ;
+    :approvedBy :Role_ProcurementSpecialist ;
+    :spendLimit 8000.0 ;
+    rdfs:comment "Approval stage 'Maintenance Spend Approval' assigned to Procurement Specialist with spend limit $8000.00." .
+
+:Step_FacilitiesMaintenanceRequest_VendorQuoteEvaluation a :ApprovalStep ;
+    rdfs:label "Vendor Quote Evaluation" ;
+    :approvedBy :Role_VendorManager ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Vendor Quote Evaluation' assigned to Vendor Manager with spend limit $0.00." .
+
+:Step_FacilitiesMaintenanceRequest_WorkCompletionVerification a :ApprovalStep ;
+    rdfs:label "Work Completion Verification" ;
+    :approvedBy :Role_OfficeAdmin ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Work Completion Verification' assigned to Office Admin with spend limit $0.00." .
+
+:Step_HardwareProcurementProcess_FinanceSpendSignoff a :ApprovalStep ;
+    rdfs:label "Finance Spend Sign-off" ;
+    :approvedBy :Role_ProcurementSpecialist ;
+    :spendLimit 2500.0 ;
+    rdfs:comment "Approval stage 'Finance Spend Sign-off' assigned to Procurement Specialist with spend limit $2500.00." .
+
+:Step_HardwareProcurementProcess_ManagerEndorsement a :ApprovalStep ;
+    rdfs:label "Manager Endorsement" ;
+    :approvedBy :Role_ItSupportSpecialist ;
+    :spendLimit 500.0 ;
+    rdfs:comment "Approval stage 'Manager Endorsement' assigned to IT Support Specialist with spend limit $500.00." .
+
+:Step_HighValueInfrastructureUpgrade_ArchitecturalReview a :ApprovalStep ;
+    rdfs:label "Architectural Review" ;
+    :approvedBy :Role_CloudArchitect ;
+    :spendLimit 10000.0 ;
+    rdfs:comment "Approval stage 'Architectural Review' assigned to Cloud Architect with spend limit $10000.00." .
+
+:Step_HighValueInfrastructureUpgrade_CfoApprovalStep a :ApprovalStep ;
+    rdfs:label "CFO Approval Step" ;
+    :approvedBy :Role_VendorManager ;
+    :spendLimit 100000.0 ;
+    rdfs:comment "Approval stage 'CFO Approval Step' assigned to Vendor Manager with spend limit $100000.00." .
+
+:Step_InternalToolDevelopmentRequest_FrontendTechnicalReview a :ApprovalStep ;
+    rdfs:label "Frontend Technical Review" ;
+    :approvedBy :Role_UiLead ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Frontend Technical Review' assigned to UI Lead with spend limit $0.00." .
+
+:Step_InternalToolDevelopmentRequest_InfrastructureProvisioningApproval a :ApprovalStep ;
+    rdfs:label "Infrastructure Provisioning Approval" ;
+    :approvedBy :Role_DevopsEngineer ;
+    :spendLimit 3000.0 ;
+    rdfs:comment "Approval stage 'Infrastructure Provisioning Approval' assigned to DevOps Engineer with spend limit $3000.00." .
+
+:Step_InternalToolDevelopmentRequest_ProductRequirementsReview a :ApprovalStep ;
+    rdfs:label "Product Requirements Review" ;
+    :approvedBy :Role_TechnicalPm ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Product Requirements Review' assigned to Technical PM with spend limit $0.00." .
+
+:Step_InternalToolDevelopmentRequest_UxFeasibilityAssessment a :ApprovalStep ;
+    rdfs:label "UX Feasibility Assessment" ;
+    :approvedBy :Role_UxDesigner ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'UX Feasibility Assessment' assigned to UX Designer with spend limit $0.00." .
+
+:Step_NewEmployeeOnboarding_AccessCredentialIssuance a :ApprovalStep ;
+    rdfs:label "Access Credential Issuance" ;
+    :approvedBy :Role_SystemAdministrator ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Access Credential Issuance' assigned to System Administrator with spend limit $0.00." .
+
+:Step_NewEmployeeOnboarding_IdentityVerification a :ApprovalStep ;
+    rdfs:label "Identity Verification" ;
+    :approvedBy :Role_HrPartner ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Identity Verification' assigned to HR Partner with spend limit $0.00." .
+
+:Step_NewEmployeeOnboarding_OnboardingChecklistSignoff a :ApprovalStep ;
+    rdfs:label "Onboarding Checklist Sign-off" ;
+    :approvedBy :Role_OnboardingLead ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Onboarding Checklist Sign-off' assigned to Onboarding Lead with spend limit $0.00." .
+
+:Step_NewEmployeeOnboarding_WorkstationProvisioning a :ApprovalStep ;
+    rdfs:label "Workstation Provisioning" ;
+    :approvedBy :Role_ItSupportSpecialist ;
+    :spendLimit 1500.0 ;
+    rdfs:comment "Approval stage 'Workstation Provisioning' assigned to IT Support Specialist with spend limit $1500.00." .
+
+:Step_OfficeRelocationProcess_BudgetAllocationApproval a :ApprovalStep ;
+    rdfs:label "Budget Allocation Approval" ;
+    :approvedBy :Role_ProcurementSpecialist ;
+    :spendLimit 75000.0 ;
+    rdfs:comment "Approval stage 'Budget Allocation Approval' assigned to Procurement Specialist with spend limit $75000.00." .
+
+:Step_OfficeRelocationProcess_ItInfrastructurePlanning a :ApprovalStep ;
+    rdfs:label "IT Infrastructure Planning" ;
+    :approvedBy :Role_SystemAdministrator ;
+    :spendLimit 20000.0 ;
+    rdfs:comment "Approval stage 'IT Infrastructure Planning' assigned to System Administrator with spend limit $20000.00." .
+
+:Step_OfficeRelocationProcess_SpaceRequirementsAssessment a :ApprovalStep ;
+    rdfs:label "Space Requirements Assessment" ;
+    :approvedBy :Role_FacilitiesManager ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Space Requirements Assessment' assigned to Facilities Manager with spend limit $0.00." .
+
+:Step_OfficeRelocationProcess_StaffCommunicationSignoff a :ApprovalStep ;
+    rdfs:label "Staff Communication Sign-off" ;
+    :approvedBy :Role_HrPartner ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Staff Communication Sign-off' assigned to HR Partner with spend limit $0.00." .
+
+:Step_ProductionSystemAccessRequest_LeadSystemApproval a :ApprovalStep ;
+    rdfs:label "Lead System Approval" ;
+    :approvedBy :Role_DevopsEngineer ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Lead System Approval' assigned to DevOps Engineer with spend limit $0.00." .
+
+:Step_ProductionSystemAccessRequest_SecurityComplianceCheck a :ApprovalStep ;
+    rdfs:label "Security Compliance Check" ;
+    :approvedBy :Role_SecurityEngineer ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Security Compliance Check' assigned to Security Engineer with spend limit $0.00." .
+
+:Step_RecruitmentCampaignApproval_HeadcountJustificationReview a :ApprovalStep ;
+    rdfs:label "Headcount Justification Review" ;
+    :approvedBy :Role_HrPartner ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Headcount Justification Review' assigned to HR Partner with spend limit $0.00." .
+
+:Step_RecruitmentCampaignApproval_JobDescriptionSignoff a :ApprovalStep ;
+    rdfs:label "Job Description Sign-off" ;
+    :approvedBy :Role_TechnicalRecruiter ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Job Description Sign-off' assigned to Technical Recruiter with spend limit $0.00." .
+
+:Step_RecruitmentCampaignApproval_RecruitmentSpendAuthorization a :ApprovalStep ;
+    rdfs:label "Recruitment Spend Authorization" ;
+    :approvedBy :Role_StaffAccountant ;
+    :spendLimit 15000.0 ;
+    rdfs:comment "Approval stage 'Recruitment Spend Authorization' assigned to Staff Accountant with spend limit $15000.00." .
+
+:Step_RecruitmentCampaignApproval_SourcingStrategyApproval a :ApprovalStep ;
+    rdfs:label "Sourcing Strategy Approval" ;
+    :approvedBy :Role_SourcingSpecialist ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Sourcing Strategy Approval' assigned to Sourcing Specialist with spend limit $0.00." .
+
+:Step_SaasProcurementWorkflow_DepartmentHeadReview a :ApprovalStep ;
+    rdfs:label "Department Head Review" ;
+    :approvedBy :Role_HrPartner ;
+    :spendLimit 1000.0 ;
+    rdfs:comment "Approval stage 'Department Head Review' assigned to HR Partner with spend limit $1000.00." .
+
+:Step_SaasProcurementWorkflow_ExecutiveSpendClearance a :ApprovalStep ;
+    rdfs:label "Executive Spend Clearance" ;
+    :approvedBy :Role_FinancialAccountant ;
+    :spendLimit 25000.0 ;
+    rdfs:comment "Approval stage 'Executive Spend Clearance' assigned to Financial Accountant with spend limit $25000.00." .
+
+:Step_SaasProcurementWorkflow_VendorSecurityAssessment a :ApprovalStep ;
+    rdfs:label "Vendor Security Assessment" ;
+    :approvedBy :Role_AppsecSpecialist ;
+    :spendLimit 5000.0 ;
+    rdfs:comment "Approval stage 'Vendor Security Assessment' assigned to AppSec Specialist with spend limit $5000.00." .
+
+:Step_SecurityIncidentResponse_ContainmentActionApproval a :ApprovalStep ;
+    rdfs:label "Containment Action Approval" ;
+    :approvedBy :Role_AppsecSpecialist ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Containment Action Approval' assigned to AppSec Specialist with spend limit $0.00." .
+
+:Step_SecurityIncidentResponse_IncidentTriageAndClassification a :ApprovalStep ;
+    rdfs:label "Incident Triage and Classification" ;
+    :approvedBy :Role_SecurityEngineer ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Incident Triage and Classification' assigned to Security Engineer with spend limit $0.00." .
+
+:Step_SecurityIncidentResponse_InfrastructureRemediation a :ApprovalStep ;
+    rdfs:label "Infrastructure Remediation" ;
+    :approvedBy :Role_DevopsEngineer ;
+    :spendLimit 5000.0 ;
+    rdfs:comment "Approval stage 'Infrastructure Remediation' assigned to DevOps Engineer with spend limit $5000.00." .
+
+:Step_SecurityIncidentResponse_PostincidentReviewSignoff a :ApprovalStep ;
+    rdfs:label "Post-Incident Review Sign-off" ;
+    :approvedBy :Role_CloudArchitect ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Post-Incident Review Sign-off' assigned to Cloud Architect with spend limit $0.00." .
+
+:Step_StandardSoftwareRequest_HelpdeskAutoVerification a :ApprovalStep ;
+    rdfs:label "Helpdesk Auto Verification" ;
+    :approvedBy :Role_SystemAdministrator ;
+    :spendLimit 250.0 ;
+    rdfs:comment "Approval stage 'Helpdesk Auto Verification' assigned to System Administrator with spend limit $250.00." .
+
+:Step_TravelAndExpenseReimbursement_ExpensePaymentAuthorization a :ApprovalStep ;
+    rdfs:label "Expense Payment Authorization" ;
+    :approvedBy :Role_StaffAccountant ;
+    :spendLimit 5000.0 ;
+    rdfs:comment "Approval stage 'Expense Payment Authorization' assigned to Staff Accountant with spend limit $5000.00." .
+
+:Step_TravelAndExpenseReimbursement_PolicyComplianceCheck a :ApprovalStep ;
+    rdfs:label "Policy Compliance Check" ;
+    :approvedBy :Role_HrPartner ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Policy Compliance Check' assigned to HR Partner with spend limit $0.00." .
+
+:Step_TravelAndExpenseReimbursement_ReceiptVerification a :ApprovalStep ;
+    rdfs:label "Receipt Verification" ;
+    :approvedBy :Role_OfficeAdmin ;
+    :spendLimit 0.0 ;
+    rdfs:comment "Approval stage 'Receipt Verification' assigned to Office Admin with spend limit $0.00." .
+
+:Dept_Finance a :Department ;
+    rdfs:label "Finance" ;
+    rdfs:comment "The Finance organizational department." .
+
+:Dept_HumanResources a :Department ;
+    rdfs:label "Human Resources" ;
+    rdfs:comment "The Human Resources organizational department." .
+
+:Dept_Operations a :Department ;
+    rdfs:label "Operations" ;
+    rdfs:comment "The Operations organizational department." .
+
+:Dept_Product a :Department ;
+    rdfs:label "Product" ;
+    rdfs:comment "The Product organizational department." .
+
+:Role_DesignResearcher a :Role ;
+    rdfs:label "Design Researcher" ;
+    :requiresAccess :Svc_CoupaSpendPlatform ;
+    rdfs:comment "Job title and governance role of Design Researcher." .
+
+:Svc_ConfluenceWiki a :Service ;
+    rdfs:label "Confluence Wiki" ;
+    :associatedChannel :Chan_Svc_ConfluenceWiki ;
+    rdfs:comment "Internal software service or platform: Confluence Wiki." .
+
+:Dept_Engineering a :Department ;
+    rdfs:label "Engineering" ;
+    rdfs:comment "The Engineering organizational department." .
+
+:Svc_AwsInfrastructure a :Service ;
+    rdfs:label "AWS Infrastructure" ;
+    :associatedChannel :Chan_Svc_AwsInfrastructure ;
+    rdfs:comment "Internal software service or platform: AWS Infrastructure." .
+
+:Svc_WorkdayHris a :Service ;
+    rdfs:label "Workday HRIS" ;
+    :associatedChannel :Chan_Svc_WorkdayHris ;
+    rdfs:comment "Internal software service or platform: Workday HRIS." .
+
+:Svc_QuickbooksOnline a :Service ;
+    rdfs:label "QuickBooks Online" ;
+    :associatedChannel :Chan_Svc_QuickbooksOnline ;
+    rdfs:comment "Internal software service or platform: QuickBooks Online." .
+
+:Role_OnboardingLead a :Role ;
+    rdfs:label "Onboarding Lead" ;
+    :requiresAccess :Svc_ConfluenceWiki ;
+    rdfs:comment "Job title and governance role of Onboarding Lead." .
+
+:Svc_CoupaSpendPlatform a :Service ;
+    rdfs:label "Coupa Spend Platform" ;
+    :associatedChannel :Chan_Svc_CoupaSpendPlatform ;
+    rdfs:comment "Internal software service or platform: Coupa Spend Platform." .
+
+:Svc_FigmaDesign a :Service ;
+    rdfs:label "Figma Design" ;
+    :associatedChannel :Chan_Svc_FigmaDesign ;
+    rdfs:comment "Internal software service or platform: Figma Design." .
+
+:Svc_GithubEnterprise a :Service ;
+    rdfs:label "GitHub Enterprise" ;
+    :associatedChannel :Chan_Svc_GithubEnterprise ;
+    rdfs:comment "Internal software service or platform: GitHub Enterprise." .
+
+:Svc_ZoomWorkplace a :Service ;
+    rdfs:label "Zoom Workplace" ;
+    :associatedChannel :Chan_Svc_ZoomWorkplace ;
+    rdfs:comment "Internal software service or platform: Zoom Workplace." .
+
+:Department a owl:Class ;
+    rdfs:label "Department" ;
+    rdfs:comment "A top-level organizational unit containing multiple teams." .
+
+:Role_DevopsEngineer a :Role ;
+    rdfs:label "DevOps Engineer" ;
+    :requiresAccess :Svc_PagerdutyIncidentResponse ;
+    rdfs:comment "Job title and governance role of DevOps Engineer." .
+
+:Role_FrontendDeveloper a :Role ;
+    rdfs:label "Frontend Developer" ;
+    :requiresAccess :Svc_DatadogMonitoring ;
+    rdfs:comment "Job title and governance role of Frontend Developer." .
+
+:Role_OfficeAdmin a :Role ;
+    rdfs:label "Office Admin" ;
+    :requiresAccess :Svc_OktaIdentity,
+        :Svc_PagerdutyIncidentResponse,
+        :Svc_QuickbooksOnline ;
+    rdfs:comment "Job title and governance role of Office Admin." .
+
+:Role_SiteReliabilityEngineer a :Role ;
+    rdfs:label "Site Reliability Engineer" ;
+    :requiresAccess :Svc_CoupaSpendPlatform,
+        :Svc_JiraSoftware ;
+    rdfs:comment "Job title and governance role of Site Reliability Engineer." .
+
+:Role_TechnicalRecruiter a :Role ;
+    rdfs:label "Technical Recruiter" ;
+    :requiresAccess :Svc_JiraSoftware,
+        :Svc_OktaIdentity ;
+    rdfs:comment "Job title and governance role of Technical Recruiter." .
+
+:Role_CloudArchitect a :Role ;
+    rdfs:label "Cloud Architect" ;
+    :requiresAccess :Svc_DatadogMonitoring ;
+    rdfs:comment "Job title and governance role of Cloud Architect." .
+
+:Role_ProductManager a :Role ;
+    rdfs:label "Product Manager" ;
+    :requiresAccess :Svc_FigmaDesign,
+        :Svc_QuickbooksOnline,
+        :Svc_WorkdayHris ;
+    rdfs:comment "Job title and governance role of Product Manager." .
+
+:Role_SourcingSpecialist a :Role ;
+    rdfs:label "Sourcing Specialist" ;
+    :requiresAccess :Svc_JiraSoftware,
+        :Svc_WorkdayHris ;
+    rdfs:comment "Job title and governance role of Sourcing Specialist." .
+
+:Role_TechnicalPm a :Role ;
+    rdfs:label "Technical PM" ;
+    :requiresAccess :Svc_JiraSoftware,
+        :Svc_OktaIdentity ;
+    rdfs:comment "Job title and governance role of Technical PM." .
+
+:Role_UiLead a :Role ;
+    rdfs:label "UI Lead" ;
+    :requiresAccess :Svc_PagerdutyIncidentResponse,
+        :Svc_ZoomWorkplace ;
+    rdfs:comment "Job title and governance role of UI Lead." .
+
+:Svc_OktaIdentity a :Service ;
+    rdfs:label "Okta Identity" ;
+    :associatedChannel :Chan_Svc_OktaIdentity ;
+    rdfs:comment "Internal software service or platform: Okta Identity." .
+
+:Svc_PagerdutyIncidentResponse a :Service ;
+    rdfs:label "PagerDuty Incident Response" ;
+    :associatedChannel :Chan_Svc_PagerdutyIncidentResponse ;
+    rdfs:comment "Internal software service or platform: PagerDuty Incident Response." .
+
+:Role_SystemAdministrator a :Role ;
+    rdfs:label "System Administrator" ;
+    :requiresAccess :Svc_CoupaSpendPlatform ;
+    rdfs:comment "Job title and governance role of System Administrator." .
+
+:Role_VendorManager a :Role ;
+    rdfs:label "Vendor Manager" ;
+    :requiresAccess :Svc_DatadogMonitoring,
+        :Svc_GithubEnterprise,
+        :Svc_JiraSoftware ;
+    rdfs:comment "Job title and governance role of Vendor Manager." .
+
+:Svc_DatadogMonitoring a :Service ;
+    rdfs:label "Datadog Monitoring" ;
+    :associatedChannel :Chan_Svc_DatadogMonitoring ;
+    rdfs:comment "Internal software service or platform: Datadog Monitoring." .
+
+:Svc_JiraSoftware a :Service ;
+    rdfs:label "Jira Software" ;
+    :associatedChannel :Chan_Svc_JiraSoftware ;
+    rdfs:comment "Internal software service or platform: Jira Software." .
+
+:Role_FacilitiesManager a :Role ;
+    rdfs:label "Facilities Manager" ;
+    :requiresAccess :Svc_JiraSoftware,
+        :Svc_OktaIdentity,
+        :Svc_ZoomWorkplace ;
+    rdfs:comment "Job title and governance role of Facilities Manager." .
+
+:Role_ItSupportSpecialist a :Role ;
+    rdfs:label "IT Support Specialist" ;
+    :requiresAccess :Svc_DatadogMonitoring,
+        :Svc_GithubEnterprise,
+        :Svc_OktaIdentity ;
+    rdfs:comment "Job title and governance role of IT Support Specialist." .
+
+:Person_HarperDavis a :Person ;
+    rdfs:label "Harper Davis" ;
+    :email "harper.davis@example.com"^^xsd:string ;
+    :hasRole :Role_FacilitiesManager ;
+    :joinDate "2020-01-24"^^xsd:date ;
+    :memberOf :Team_WorkplaceOperations ;
+    :phoneNumber "020 7946 0448"^^xsd:string ;
+    :reportsTo :Person_RowanAnderson ;
+    rdfs:comment "Employee Harper Davis working as Facilities Manager on the Workplace Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HarperDavis.png> .
+
+:Role_FinancialAccountant a :Role ;
+    rdfs:label "Financial Accountant" ;
+    :requiresAccess :Svc_CoupaSpendPlatform,
+        :Svc_GithubEnterprise ;
+    rdfs:comment "Job title and governance role of Financial Accountant." .
+
+:Role_SecurityEngineer a :Role ;
+    rdfs:label "Security Engineer" ;
+    :requiresAccess :Svc_DatadogMonitoring ;
+    rdfs:comment "Job title and governance role of Security Engineer." .
+
+:Role_StaffAccountant a :Role ;
+    rdfs:label "Staff Accountant" ;
+    :requiresAccess :Svc_FigmaDesign,
+        :Svc_ZoomWorkplace ;
+    rdfs:comment "Job title and governance role of Staff Accountant." .
+
+:Team_WorkplaceOperations a :Team ;
+    rdfs:label "Workplace Operations Team" ;
+    :associatedChannel :Chan_Team_WorkplaceOperations ;
+    :belongsToDepartment :Dept_Operations ;
+    :managedBy :Person_HarperDavis ;
+    :owns :Svc_PagerdutyIncidentResponse ;
+    rdfs:comment "Functional team operating under the Operations department." .
+
+:Person_CaseyAnderson a :Person ;
+    rdfs:label "Casey Anderson" ;
+    :email "casey.anderson@example.com"^^xsd:string ;
+    :hasRole :Role_SecurityEngineer ;
+    :joinDate "2019-08-23"^^xsd:date ;
+    :memberOf :Team_SecurityOperations ;
+    :phoneNumber "020 7946 0987"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Casey Anderson working as Security Engineer on the Security Operations team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CaseyAnderson.png> .
+
+:Person_CaseyGonzalez a :Person ;
+    rdfs:label "Casey Gonzalez" ;
+    :email "casey.gonzalez@example.com"^^xsd:string ;
+    :hasRole :Role_UxDesigner ;
+    :joinDate "2019-11-14"^^xsd:date ;
+    :memberOf :Team_UxResearch ;
+    :phoneNumber "01632 960008"^^xsd:string ;
+    :reportsTo :Person_KendallWilson ;
+    rdfs:comment "Employee Casey Gonzalez working as UX Designer on the UX Research team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/CaseyGonzalez.png> .
+
+:Person_HarperMiller a :Person ;
+    rdfs:label "Harper Miller" ;
+    :email "harper.miller@example.com"^^xsd:string ;
+    :hasRole :Role_ProcurementSpecialist ;
+    :joinDate "2019-10-15"^^xsd:date ;
+    :memberOf :Team_Procurement ;
+    :phoneNumber "020 7946 0445"^^xsd:string ;
+    :reportsTo :Person_SkylerSmith ;
+    rdfs:comment "Employee Harper Miller working as Procurement Specialist on the Procurement team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HarperMiller.png> .
+
+:Person_HaydenMoore a :Person ;
+    rdfs:label "Hayden Moore" ;
+    :email "hayden.moore@example.com"^^xsd:string ;
+    :hasRole :Role_UiLead ;
+    :joinDate "2020-05-25"^^xsd:date ;
+    :memberOf :Team_CoreFrontend ;
+    :phoneNumber "07700 900577"^^xsd:string ;
+    :reportsTo :Person_KendallThomas ;
+    rdfs:comment "Employee Hayden Moore working as UI Lead on the Core Frontend team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/HaydenMoore.png> .
+
+:Person_JamieThomas a :Person ;
+    rdfs:label "Jamie Thomas" ;
+    :email "jamie.thomas@example.com"^^xsd:string ;
+    :hasRole :Role_OnboardingLead ;
+    :joinDate "2020-10-18"^^xsd:date ;
+    :memberOf :Team_PeopleExperience ;
+    :phoneNumber "01632 960169"^^xsd:string ;
+    :reportsTo :Person_MorganMartinez ;
+    rdfs:comment "Employee Jamie Thomas working as Onboarding Lead on the People Experience team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/JamieThomas.png> .
+
+:Role_ProcurementSpecialist a :Role ;
+    rdfs:label "Procurement Specialist" ;
+    :requiresAccess :Svc_AwsInfrastructure,
+        :Svc_FigmaDesign,
+        :Svc_GithubEnterprise ;
+    rdfs:comment "Job title and governance role of Procurement Specialist." .
+
+:Team_CoreFrontend a :Team ;
+    rdfs:label "Core Frontend Team" ;
+    :associatedChannel :Chan_Team_CoreFrontend ;
+    :belongsToDepartment :Dept_Engineering ;
+    :managedBy :Person_HaydenMoore ;
+    :owns :Svc_QuickbooksOnline ;
+    rdfs:comment "Functional team operating under the Engineering department." .
+
+:Team_CorporateAccounting a :Team ;
+    rdfs:label "Corporate Accounting Team" ;
+    :associatedChannel :Chan_Team_CorporateAccounting ;
+    :belongsToDepartment :Dept_Finance ;
+    :managedBy :Person_SkylerSmith ;
+    :owns :Svc_CoupaSpendPlatform,
+        :Svc_PagerdutyIncidentResponse ;
+    rdfs:comment "Functional team operating under the Finance department." .
+
+:Team_ItSupportServices a :Team ;
+    rdfs:label "IT Support Services Team" ;
+    :associatedChannel :Chan_Team_ItSupportServices ;
+    :belongsToDepartment :Dept_Operations ;
+    :managedBy :Person_RowanAnderson ;
+    :owns :Svc_FigmaDesign,
+        :Svc_QuickbooksOnline ;
+    rdfs:comment "Functional team operating under the Operations department." .
+
+:Team_PeopleExperience a :Team ;
+    rdfs:label "People Experience Team" ;
+    :associatedChannel :Chan_Team_PeopleExperience ;
+    :belongsToDepartment :Dept_HumanResources ;
+    :managedBy :Person_JamieThomas ;
+    :owns :Svc_DatadogMonitoring,
+        :Svc_PagerdutyIncidentResponse ;
+    rdfs:comment "Functional team operating under the Human Resources department." .
+
+:Team_PlatformInfrastructure a :Team ;
+    rdfs:label "Platform Infrastructure Team" ;
+    :associatedChannel :Chan_Team_PlatformInfrastructure ;
+    :belongsToDepartment :Dept_Engineering ;
+    :managedBy :Person_KendallThomas ;
+    :owns :Svc_DatadogMonitoring,
+        :Svc_JiraSoftware ;
+    rdfs:comment "Functional team operating under the Engineering department." .
+
+:Team_Procurement a :Team ;
+    rdfs:label "Procurement Team" ;
+    :associatedChannel :Chan_Team_Procurement ;
+    :belongsToDepartment :Dept_Finance ;
+    :managedBy :Person_HarperMiller ;
+    :owns :Svc_ZoomWorkplace ;
+    rdfs:comment "Functional team operating under the Finance department." .
+
+:Team_ProductManagement a :Team ;
+    rdfs:label "Product Management Team" ;
+    :associatedChannel :Chan_Team_ProductManagement ;
+    :belongsToDepartment :Dept_Product ;
+    :managedBy :Person_KendallWilson ;
+    :owns :Svc_OktaIdentity ;
+    rdfs:comment "Functional team operating under the Product department." .
+
+:Team_SecurityOperations a :Team ;
+    rdfs:label "Security Operations Team" ;
+    :associatedChannel :Chan_Team_SecurityOperations ;
+    :belongsToDepartment :Dept_Engineering ;
+    :managedBy :Person_CaseyAnderson ;
+    :owns :Svc_ConfluenceWiki,
+        :Svc_PagerdutyIncidentResponse ;
+    rdfs:comment "Functional team operating under the Engineering department." .
+
+:Team_TalentAcquisition a :Team ;
+    rdfs:label "Talent Acquisition Team" ;
+    :associatedChannel :Chan_Team_TalentAcquisition ;
+    :belongsToDepartment :Dept_HumanResources ;
+    :managedBy :Person_MorganMartinez ;
+    :owns :Svc_AwsInfrastructure,
+        :Svc_WorkdayHris ;
+    rdfs:comment "Functional team operating under the Human Resources department." .
+
+:Team_UxResearch a :Team ;
+    rdfs:label "UX Research Team" ;
+    :associatedChannel :Chan_Team_UxResearch ;
+    :belongsToDepartment :Dept_Product ;
+    :managedBy :Person_CaseyGonzalez ;
+    :owns :Svc_AwsInfrastructure ;
+    rdfs:comment "Functional team operating under the Product department." .
+
+:Person_KendallWilson a :Person ;
+    rdfs:label "Kendall Wilson" ;
+    :email "kendall.wilson@example.com"^^xsd:string ;
+    :hasRole :Role_ProductManager ;
+    :joinDate "2018-02-14"^^xsd:date ;
+    :memberOf :Team_ProductManagement ;
+    :phoneNumber "07700 900623"^^xsd:string ;
+    rdfs:comment "Employee Kendall Wilson working as Product Manager on the Product Management team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/KendallWilson.png> .
+
+:Person_MorganMartinez a :Person ;
+    rdfs:label "Morgan Martinez" ;
+    :email "morgan.martinez@example.com"^^xsd:string ;
+    :hasRole :Role_TechnicalRecruiter ;
+    :joinDate "2018-03-30"^^xsd:date ;
+    :memberOf :Team_TalentAcquisition ;
+    :phoneNumber "07700 900368"^^xsd:string ;
+    rdfs:comment "Employee Morgan Martinez working as Technical Recruiter on the Talent Acquisition team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/MorganMartinez.png> .
+
+:Person_RowanAnderson a :Person ;
+    rdfs:label "Rowan Anderson" ;
+    :email "rowan.anderson@example.com"^^xsd:string ;
+    :hasRole :Role_ItSupportSpecialist ;
+    :joinDate "2018-10-26"^^xsd:date ;
+    :memberOf :Team_ItSupportServices ;
+    :phoneNumber "020 7946 0966"^^xsd:string ;
+    rdfs:comment "Employee Rowan Anderson working as IT Support Specialist on the IT Support Services team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/RowanAnderson.png> .
+
+:Person_SkylerSmith a :Person ;
+    rdfs:label "Skyler Smith" ;
+    :email "skyler.smith@example.com"^^xsd:string ;
+    :hasRole :Role_StaffAccountant ;
+    :joinDate "2018-08-27"^^xsd:date ;
+    :memberOf :Team_CorporateAccounting ;
+    :phoneNumber "07700 900387"^^xsd:string ;
+    rdfs:comment "Employee Skyler Smith working as Staff Accountant on the Corporate Accounting team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/SkylerSmith.png> .
+
+:Role_AppsecSpecialist a :Role ;
+    rdfs:label "AppSec Specialist" ;
+    :requiresAccess :Svc_FigmaDesign,
+        :Svc_GithubEnterprise,
+        :Svc_JiraSoftware ;
+    rdfs:comment "Job title and governance role of AppSec Specialist." .
+
+:Role_UxDesigner a :Role ;
+    rdfs:label "UX Designer" ;
+    :requiresAccess :Svc_DatadogMonitoring,
+        :Svc_ZoomWorkplace ;
+    rdfs:comment "Job title and governance role of UX Designer." .
+
+:Person_KendallThomas a :Person ;
+    rdfs:label "Kendall Thomas" ;
+    :email "kendall.thomas@example.com"^^xsd:string ;
+    :hasRole :Role_CloudArchitect ;
+    :joinDate "2018-02-17"^^xsd:date ;
+    :memberOf :Team_PlatformInfrastructure ;
+    :phoneNumber "020 7946 0574"^^xsd:string ;
+    rdfs:comment "Employee Kendall Thomas working as Cloud Architect on the Platform Infrastructure team." ;
+    foaf:thumbnail <https://raw.githubusercontent.com/trustgraph-ai/demo-onboarding/master/portraits/KendallThomas.png> .
+
+:Role_HrPartner a :Role ;
+    rdfs:label "HR Partner" ;
+    :requiresAccess :Svc_OktaIdentity ;
+    rdfs:comment "Job title and governance role of HR Partner." .
+
+:Service a owl:Class ;
+    rdfs:label "Service" ;
+    rdfs:comment "An internal tool, software platform, infrastructure system, or SaaS application." .
+
+:Team a owl:Class ;
+    rdfs:label "Team" ;
+    rdfs:comment "A functional group of individuals collaborating on specific operational goals." .
+
+:Process a owl:Class ;
+    rdfs:label "Process" ;
+    rdfs:comment "A structured sequence of administrative steps or workflows." .
+
+:Channel a owl:Class ;
+    rdfs:label "Channel" ;
+    rdfs:comment "A communication medium, such as a Slack channel or distribution list." .
+
+:Role a owl:Class ;
+    rdfs:label "Role" ;
+    rdfs:comment "A designated job function, title, or position held by a Person." .
+
+:ApprovalStep a owl:Class ;
+    rdfs:label "Approval Step" ;
+    rdfs:comment "A specific phase within a Process where sign-off is required." .
+
+:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:comment "An individual employee, contractor, or team member within the organization." .
+
