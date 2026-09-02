@@ -7,7 +7,7 @@ from pathlib import Path
 
 SD_URL = "http://localhost:7860"
 ONTOLOGY = "http://example.org/ontology/office#"
-OUTPUT_DIR = Path("images")
+OUTPUT_DIR = Path("portraits")
 
 OUTPUT_DIR.mkdir(exist_ok=True)
 
@@ -20,7 +20,7 @@ RDFS = rdflib.namespace.RDFS
 persons = sorted(g.subjects(rdflib.RDF.type, ONT.Person), key=str)
 
 for person in persons:
-    local_name = str(person).split("#")[-1]
+    local_name = str(person).split("#")[-1].removeprefix("Person_")
     output_path = OUTPUT_DIR / f"{local_name}.png"
 
     if output_path.exists():
@@ -48,8 +48,8 @@ for person in persons:
         "prompt": prompt,
         "negative_prompt": negative_prompt,
         "steps": 25,
-        "width": 512,
-        "height": 512,
+        "width": 250,
+        "height": 250,
         "cfg_scale": 7,
         "sampler_name": "Euler a",
     }
